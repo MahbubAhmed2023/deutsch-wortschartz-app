@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DE Deutsch Wortschatz — Glossar (Tag 01–15)</title>
+  <title>DE Deutsch Wortschatz — Glossar (Tag 01–25)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f1f5f9;
@@ -40,7 +43,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", sans-serif;
+      font-family: 'Poppins', 'Noto Serif Bengali', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
@@ -152,6 +155,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 10px;
+    }
+
+    input, select, button {
+      font-family: inherit;
     }
 
     input, select {
@@ -456,7 +463,7 @@
 <body>
   <header>
     <h1>🇩🇪 DE Deutsch Wortschatz</h1>
-    <p>Glossar & Vokabeltrainer • Tag 01 – Tag 15 (৩০০টি শব্দ)</p>
+    <p>Glossar & Vokabeltrainer • Tag 01 – Tag 25 (৫০০টি শব্দ)</p>
     <div class="legend-bar">
       <span class="legend-pill pill-der">der = maskulin</span>
       <span class="legend-pill pill-die">die = feminin</span>
@@ -495,7 +502,7 @@
       <div class="filter-grid">
         <input type="text" id="searchInput" placeholder="জার্মান, ইংরেজি বা বাংলায় খুঁজুন..." />
         <select id="dayFilter">
-          <option value="ALL">সব দিন (Tag 01 – Tag 15)</option>
+          <option value="ALL">সব দিন (Tag 01 – Tag 25)</option>
           <option value="Tag 01">Tag 01 — মানুষ ও ব্যক্তিগত পরিচয়</option>
           <option value="Tag 02">Tag 02 — পরিবার ও আত্মীয়স্বজন</option>
           <option value="Tag 03">Tag 03 — বন্ধু ও সম্পর্ক</option>
@@ -511,6 +518,16 @@
           <option value="Tag 13">Tag 13 — কর্মক্ষেত্র</option>
           <option value="Tag 14">Tag 14 — দিন ও সময়</option>
           <option value="Tag 15">Tag 15 — মাস ও ঋতু</option>
+          <option value="Tag 16">Tag 16 — আবহাওয়া</option>
+          <option value="Tag 17">Tag 17 — খাবার</option>
+          <option value="Tag 18">Tag 18 — পানীয়</option>
+          <option value="Tag 19">Tag 19 — কেনাকাটা</option>
+          <option value="Tag 20">Tag 20 — পোশাক</option>
+          <option value="Tag 21">Tag 21 — শরীরের অঙ্গ</option>
+          <option value="Tag 22">Tag 22 — স্বাস্থ্য ও অসুস্থতা</option>
+          <option value="Tag 23">Tag 23 — শহর ও বিভিন্ন স্থান</option>
+          <option value="Tag 24">Tag 24 — পাবলিক প্লেস ও প্রতিষ্ঠান</option>
+          <option value="Tag 25">Tag 25 — যানবাহন</option>
         </select>
         <select id="artikelFilter">
           <option value="ALL">সব Artikel</option>
@@ -754,7 +771,9 @@
       { id: 197, day: "Tag 10", serial: 17, artikel: "die", german: "Kamera", plural: "die Kameras", bangla: "ক্যামেরা", english: "camera", exDe: "Die Kamera ist neu.", exBn: "ক্যামেরাটি নতুন।" },
       { id: 198, day: "Tag 10", serial: 18, artikel: "der", german: "Kopfhörer", plural: "die Kopfhörer", bangla: "হেডফোন", english: "headphones", exDe: "Ich höre Musik mit Kopfhörern.", exBn: "আমি হেডফোনে গান শুনি।" },
       { id: 199, day: "Tag 10", serial: 19, artikel: "das", german: "Ladekabel", plural: "die Ladekabel", bangla: "চার্জার তার", english: "charging cable", exDe: "Ich brauche ein Ladekabel.", exBn: "আমার একটি চার্জার তার দরকার।" },
-      { id: 200, day: "Tag 10", serial: 20, artikel: "die", german: "Batterie", plural: "die Batterien", bangla: "ব্যাটারি", english: "battery", exDe: "Die Batterie ist leer.", exBn: "ব্যাটারি শেষ হয়ে গেছে।" },// --- TAG 11: School & Education (স্কুল ও শিক্ষা) ---
+      { id: 200, day: "Tag 10", serial: 20, artikel: "die", german: "Batterie", plural: "die Batterien", bangla: "ব্যাটারি", english: "battery", exDe: "Die Batterie ist leer.", exBn: "ব্যাটারি শেষ হয়ে গেছে।" },
+
+      // --- TAG 11: School & Education (স্কুল ও শিক্ষা) ---
       { id: 201, day: "Tag 11", serial: 1, artikel: "die", german: "Schule", plural: "die Schulen", bangla: "স্কুল, বিদ্যালয়", english: "school", exDe: "Die Schule beginnt um acht Uhr.", exBn: "স্কুল আটটায় শুরু হয়।" },
       { id: 202, day: "Tag 11", serial: 2, artikel: "die", german: "Universität", plural: "die Universitäten", bangla: "বিশ্ববিদ্যালয়", english: "university", exDe: "Ich studiere an der Universität.", exBn: "আমি বিশ্ববিদ্যালয়ে পড়ি।" },
       { id: 203, day: "Tag 11", serial: 3, artikel: "der", german: "Lehrer", plural: "die Lehrer (f.: die Lehrerin)", bangla: "শিক্ষক", english: "teacher", exDe: "Der Lehrer erklärt die Aufgabe.", exBn: "শিক্ষক কাজটি বুঝিয়ে দেন।" },
@@ -862,7 +881,225 @@
       { id: 297, day: "Tag 15", serial: 17, artikel: "das", german: "Jahr", plural: "die Jahre", bangla: "বছর", english: "year", exDe: "Ein Jahr hat zwölf Monate.", exBn: "এক বছরে বারো মাস।" },
       { id: 298, day: "Tag 15", serial: 18, artikel: "der", german: "Monat", plural: "die Monate", bangla: "মাস", english: "month", exDe: "Der Monat hat dreißig Tage.", exBn: "মাসটিতে ত্রিশ দিন আছে।" },
       { id: 299, day: "Tag 15", serial: 19, artikel: "die", german: "Jahreszeit", plural: "die Jahreszeiten", bangla: "ঋতু", english: "season", exDe: "Welche Jahreszeit magst du?", exBn: "তুমি কোন ঋতু পছন্দ করো?" },
-      { id: 300, day: "Tag 15", serial: 20, artikel: "der", german: "Kalender", plural: "die Kalender", bangla: "ক্যালেন্ডার", english: "calendar", exDe: "Der Kalender hängt an der Wand.", exBn: "ক্যালেন্ডারটি দেয়ালে ঝোলানো আছে।" }
+      { id: 300, day: "Tag 15", serial: 20, artikel: "der", german: "Kalender", plural: "die Kalender", bangla: "ক্যালেন্ডার", english: "calendar", exDe: "Der Kalender hängt an der Wand.", exBn: "ক্যালেন্ডারটি দেয়ালে ঝোলানো আছে।" },// --- TAG 16: Weather (আবহাওয়া) ---
+      { id: 301, day: "Tag 16", serial: 1, artikel: "das", german: "Wetter", plural: "(kein Plural)", bangla: "আবহাওয়া", english: "weather", exDe: "Das Wetter ist heute schön.", exBn: "আজ আবহাওয়া সুন্দর।" },
+      { id: 302, day: "Tag 16", serial: 2, artikel: "die", german: "Sonne", plural: "die Sonnen", bangla: "সূর্য", english: "sun", exDe: "Die Sonne scheint.", exBn: "সূর্য আলো দিচ্ছে।" },
+      { id: 303, day: "Tag 16", serial: 3, artikel: "der", german: "Regen", plural: "(kein Plural)", bangla: "বৃষ্টি", english: "rain", exDe: "Der Regen ist stark.", exBn: "বৃষ্টি জোরে হচ্ছে।" },
+      { id: 304, day: "Tag 16", serial: 4, artikel: "der", german: "Schnee", plural: "(kein Plural)", bangla: "তুষার, বরফ", english: "snow", exDe: "Im Winter liegt Schnee.", exBn: "শীতে তুষার জমে থাকে।" },
+      { id: 305, day: "Tag 16", serial: 5, artikel: "der", german: "Wind", plural: "die Winde", bangla: "বাতাস, হাওয়া", english: "wind", exDe: "Der Wind ist kalt.", exBn: "বাতাস ঠান্ডা।" },
+      { id: 306, day: "Tag 16", serial: 6, artikel: "die", german: "Wolke", plural: "die Wolken", bangla: "মেঘ", english: "cloud", exDe: "Am Himmel sind viele Wolken.", exBn: "আকাশে অনেক মেঘ।" },
+      { id: 307, day: "Tag 16", serial: 7, artikel: "der", german: "Himmel", plural: "(meist Singular)", bangla: "আকাশ", english: "sky", exDe: "Der Himmel ist blau.", exBn: "আকাশ নীল।" },
+      { id: 308, day: "Tag 16", serial: 8, artikel: "der", german: "Sturm", plural: "die Stürme", bangla: "ঝড়", english: "storm", exDe: "Der Sturm kommt heute Nacht.", exBn: "আজ রাতে ঝড় আসছে।" },
+      { id: 309, day: "Tag 16", serial: 9, artikel: "das", german: "Gewitter", plural: "die Gewitter", bangla: "বজ্রসহ বৃষ্টি", english: "thunderstorm", exDe: "Es gibt ein Gewitter.", exBn: "বজ্রসহ বৃষ্টি হচ্ছে।" },
+      { id: 310, day: "Tag 16", serial: 10, artikel: "der", german: "Nebel", plural: "(kein Plural)", bangla: "কুয়াশা", english: "fog", exDe: "Im Nebel sieht man wenig.", exBn: "কুয়াশায় খুব কম দেখা যায়।" },
+      { id: 311, day: "Tag 16", serial: 11, artikel: "die", german: "Hitze", plural: "(kein Plural)", bangla: "প্রচণ্ড গরম", english: "heat", exDe: "Die Hitze ist furchtbar.", exBn: "গরমটা ভয়ানক।" },
+      { id: 312, day: "Tag 16", serial: 12, artikel: "die", german: "Kälte", plural: "(kein Plural)", bangla: "ঠান্ডা", english: "cold", exDe: "Die Kälte ist unangenehm.", exBn: "ঠান্ডা অস্বস্তিকর।" },
+      { id: 313, day: "Tag 16", serial: 13, artikel: "die", german: "Temperatur", plural: "die Temperaturen", bangla: "তাপমাত্রা", english: "temperature", exDe: "Die Temperatur ist heute hoch.", exBn: "আজ তাপমাত্রা বেশি।" },
+      { id: 314, day: "Tag 16", serial: 14, artikel: "der", german: "Grad", plural: "die Grade (nach Zahlen: 30 Grad)", bangla: "ডিগ্রি", english: "degree", exDe: "Heute sind es 30 Grad.", exBn: "আজ ৩০ ডিগ্রি।" },
+      { id: 315, day: "Tag 16", serial: 15, artikel: "der", german: "Blitz", plural: "die Blitze", bangla: "বিদ্যুৎ চমক", english: "lightning", exDe: "Der Blitz ist sehr hell.", exBn: "বিদ্যুৎ চমক খুব উজ্জ্বল।" },
+      { id: 316, day: "Tag 16", serial: 16, artikel: "der", german: "Donner", plural: "(kein Plural)", bangla: "বজ্রধ্বনি", english: "thunder", exDe: "Der Donner ist laut.", exBn: "বজ্রধ্বনি জোরে।" },
+      { id: 317, day: "Tag 16", serial: 17, artikel: "der", german: "Regenbogen", plural: "die Regenbögen", bangla: "রামধনু", english: "rainbow", exDe: "Ich sehe einen Regenbogen.", exBn: "আমি একটি রামধনু দেখছি।" },
+      { id: 318, day: "Tag 16", serial: 18, artikel: "die", german: "Überschwemmung", plural: "die Überschwemmungen", bangla: "বন্যা, জলাবদ্ধতা", english: "flood", exDe: "Die Überschwemmung ist gefährlich.", exBn: "বন্যা বিপজ্জনক।" },
+      { id: 319, day: "Tag 16", serial: 19, artikel: "die", german: "Wettervorhersage", plural: "die Wettervorhersagen", bangla: "আবহাওয়ার পূর্বাভাস", english: "weather forecast", exDe: "Die Wettervorhersage sagt Regen.", exBn: "আবহাওয়ার পূর্বাভাসে বৃষ্টির কথা বলা হয়েছে।" },
+      { id: 320, day: "Tag 16", serial: 20, artikel: "der", german: "Schirm", plural: "die Schirme (kurz für: der Regenschirm)", bangla: "ছাতা", english: "umbrella", exDe: "Bei Regen brauche ich einen Schirm.", exBn: "বৃষ্টিতে আমার একটি ছাতা দরকার।" },
+
+      // --- TAG 17: Food (খাবার) ---
+      { id: 321, day: "Tag 17", serial: 1, artikel: "das", german: "Essen", plural: "(kein Plural)", bangla: "খাবার; খাওয়া", english: "food; meal", exDe: "Das Essen ist fertig.", exBn: "খাবার প্রস্তুত।" },
+      { id: 322, day: "Tag 17", serial: 2, artikel: "das", german: "Brot", plural: "die Brote", bangla: "রুটি, পাউরুটি", english: "bread", exDe: "Ich esse Brot zum Frühstück.", exBn: "আমি সকালের নাস্তায় রুটি খাই।" },
+      { id: 323, day: "Tag 17", serial: 3, artikel: "das", german: "Salz", plural: "(meist kein Plural)", bangla: "লবণ", english: "salt", exDe: "Bitte gib mir das Salz.", exBn: "দয়া করে আমাকে লবণটা দাও।" },
+      { id: 324, day: "Tag 17", serial: 4, artikel: "der", german: "Reis", plural: "(kein Plural)", bangla: "ভাত, চাল", english: "rice", exDe: "Ich esse gern Reis.", exBn: "আমি ভাত খেতে ভালোবাসি।" },
+      { id: 325, day: "Tag 17", serial: 5, artikel: "das", german: "Fleisch", plural: "(kein Plural)", bangla: "মাংস", english: "meat", exDe: "Das Fleisch ist frisch.", exBn: "মাংসটি তাজা।" },
+      { id: 326, day: "Tag 17", serial: 6, artikel: "das", german: "Hähnchen", plural: "die Hähnchen", bangla: "মুরগি, মুরগির মাংস", english: "chicken", exDe: "Das Hähnchen schmeckt gut.", exBn: "মুরগির মাংস সুস্বাদু।" },
+      { id: 327, day: "Tag 17", serial: 7, artikel: "der", german: "Fisch", plural: "die Fische", bangla: "মাছ", english: "fish", exDe: "Wir essen Fisch mit Reis.", exBn: "আমরা ভাতের সাথে মাছ খাই।" },
+      { id: 328, day: "Tag 17", serial: 8, artikel: "das", german: "Ei", plural: "die Eier", bangla: "ডিম", english: "egg", exDe: "Ich esse zwei Eier.", exBn: "আমি দুটি ডিম খাই।" },
+      { id: 329, day: "Tag 17", serial: 9, artikel: "der", german: "Käse", plural: "(meist kein Plural)", bangla: "পনির", english: "cheese", exDe: "Der Käse ist lecker.", exBn: "পনিরটি সুস্বাদু।" },
+      { id: 330, day: "Tag 17", serial: 10, artikel: "die", german: "Butter", plural: "(kein Plural)", bangla: "মাখন", english: "butter", exDe: "Ich brauche Butter.", exBn: "আমার মাখন দরকার।" },
+      { id: 331, day: "Tag 17", serial: 11, artikel: "das", german: "Gemüse", plural: "(kein Plural)", bangla: "সবজি", english: "vegetables", exDe: "Das Gemüse ist gesund.", exBn: "সবজি স্বাস্থ্যকর।" },
+      { id: 332, day: "Tag 17", serial: 12, artikel: "das", german: "Obst", plural: "(kein Plural)", bangla: "ফল", english: "fruit", exDe: "Ich esse jeden Tag Obst.", exBn: "আমি প্রতিদিন ফল খাই।" },
+      { id: 333, day: "Tag 17", serial: 13, artikel: "der", german: "Apfel", plural: "die Äpfel", bangla: "আপেল", english: "apple", exDe: "Der Apfel ist rot.", exBn: "আপেলটি লাল।" },
+      { id: 334, day: "Tag 17", serial: 14, artikel: "die", german: "Banane", plural: "die Bananen", bangla: "কলা", english: "banana", exDe: "Die Banane ist gelb.", exBn: "কলাটি হলুদ।" },
+      { id: 335, day: "Tag 17", serial: 15, artikel: "die", german: "Kartoffel", plural: "die Kartoffeln", bangla: "আলু", english: "potato", exDe: "Ich koche Kartoffeln.", exBn: "আমি আলু রান্না করছি।" },
+      { id: 336, day: "Tag 17", serial: 16, artikel: "die", german: "Tomate", plural: "die Tomaten", bangla: "টমেটো", english: "tomato", exDe: "Die Tomaten sind frisch.", exBn: "টমেটোগুলো তাজা।" },
+      { id: 337, day: "Tag 17", serial: 17, artikel: "die", german: "Zwiebel", plural: "die Zwiebeln", bangla: "পেঁয়াজ", english: "onion", exDe: "Ich schneide eine Zwiebel.", exBn: "আমি একটি পেঁয়াজ কাটছি।" },
+      { id: 338, day: "Tag 17", serial: 18, artikel: "der", german: "Salat", plural: "die Salate", bangla: "সালাদ", english: "salad", exDe: "Der Salat schmeckt gut.", exBn: "সালাদটি সুস্বাদু।" },
+      { id: 339, day: "Tag 17", serial: 19, artikel: "die", german: "Suppe", plural: "die Suppen", bangla: "স্যুপ, ঝোল", english: "soup", exDe: "Die Suppe ist heiß.", exBn: "স্যুপটি গরম।" },
+      { id: 340, day: "Tag 17", serial: 20, artikel: "der", german: "Zucker", plural: "(kein Plural)", bangla: "চিনি", english: "sugar", exDe: "Ich nehme keinen Zucker im Tee.", exBn: "আমি চায়ে চিনি নিই না।" },
+
+      // --- TAG 18: Drinks (পানীয়) ---
+      { id: 341, day: "Tag 18", serial: 1, artikel: "das", german: "Getränk", plural: "die Getränke", bangla: "পানীয়", english: "drink, beverage", exDe: "Welches Getränk möchten Sie?", exBn: "আপনি কোন পানীয় চান?" },
+      { id: 342, day: "Tag 18", serial: 2, artikel: "das", german: "Wasser", plural: "(meist Singular)", bangla: "পানি, জল", english: "water", exDe: "Ich trinke viel Wasser.", exBn: "আমি অনেক পানি পান করি।" },
+      { id: 343, day: "Tag 18", serial: 3, artikel: "das", german: "Mineralwasser", plural: "die Mineralwasser", bangla: "মিনারেল ওয়াটার", english: "mineral water", exDe: "Ein Mineralwasser, bitte.", exBn: "একটি মিনারেল ওয়াটার দিন, প্লিজ।" },
+      { id: 344, day: "Tag 18", serial: 4, artikel: "das", german: "Leitungswasser", plural: "(kein Plural)", bangla: "কলের পানি", english: "tap water", exDe: "Das Leitungswasser ist trinkbar.", exBn: "কলের পানি পানযোগ্য।" },
+      { id: 345, day: "Tag 18", serial: 5, artikel: "der", german: "Tee", plural: "die Tees", bangla: "চা", english: "tea", exDe: "Ich trinke Tee mit Milch.", exBn: "আমি দুধ দিয়ে চা পান করি।" },
+      { id: 346, day: "Tag 18", serial: 6, artikel: "der", german: "Kräutertee", plural: "die Kräutertees", bangla: "হার্বাল চা", english: "herbal tea", exDe: "Abends trinke ich Kräutertee.", exBn: "সন্ধ্যায় আমি হার্বাল চা পান করি।" },
+      { id: 347, day: "Tag 18", serial: 7, artikel: "der", german: "Kaffee", plural: "die Kaffees", bangla: "কফি", english: "coffee", exDe: "Der Kaffee ist heiß.", exBn: "কফি গরম।" },
+      { id: 348, day: "Tag 18", serial: 8, artikel: "die", german: "Milch", plural: "(kein Plural)", bangla: "দুধ", english: "milk", exDe: "Die Milch ist kalt.", exBn: "দুধ ঠান্ডা।" },
+      { id: 349, day: "Tag 18", serial: 9, artikel: "der", german: "Kakao", plural: "die Kakaos", bangla: "কোকো", english: "cocoa", exDe: "Im Winter trinke ich gern Kakao.", exBn: "শীতে আমি কোকো পান করতে ভালোবাসি।" },
+      { id: 350, day: "Tag 18", serial: 10, artikel: "der", german: "Saft", plural: "die Säfte", bangla: "জুস, ফলের রস", english: "juice", exDe: "Der Saft ist süß.", exBn: "জুসটি মিষ্টি।" },
+      { id: 351, day: "Tag 18", serial: 11, artikel: "der", german: "Orangensaft", plural: "die Orangensäfte", bangla: "কমলার জুস", english: "orange juice", exDe: "Ich trinke Orangensaft zum Frühstück.", exBn: "আমি সকালের নাস্তায় কমলার জুস পান করি।" },
+      { id: 352, day: "Tag 18", serial: 12, artikel: "der", german: "Apfelsaft", plural: "die Apfelsäfte", bangla: "আপেলের জুস", english: "apple juice", exDe: "Das Kind trinkt Apfelsaft.", exBn: "শিশুটি আপেলের জুস পান করছে।" },
+      { id: 353, day: "Tag 18", serial: 13, artikel: "die", german: "Cola", plural: "die Colas", bangla: "কোলা", english: "cola", exDe: "Eine Cola, bitte.", exBn: "একটি কোলা দিন, প্লিজ।" },
+      { id: 354, day: "Tag 18", serial: 14, artikel: "die", german: "Limonade", plural: "die Limonaden", bangla: "লেমনেড, কোমল পানীয়", english: "lemonade, soft drink", exDe: "Die Limonade ist süß.", exBn: "লেমনেডটি মিষ্টি।" },
+      { id: 355, day: "Tag 18", serial: 15, artikel: "der", german: "Smoothie", plural: "die Smoothies", bangla: "স্মদি", english: "smoothie", exDe: "Der Smoothie ist gesund.", exBn: "স্মদিটি স্বাস্থ্যকর।" },
+      { id: 356, day: "Tag 18", serial: 16, artikel: "die", german: "Zitrone", plural: "die Zitronen", bangla: "লেবু", english: "lemon", exDe: "Ich trinke Wasser mit Zitrone.", exBn: "আমি লেবু দিয়ে পানি পান করি।" },
+      { id: 357, day: "Tag 18", serial: 17, artikel: "der", german: "Eiswürfel", plural: "die Eiswürfel", bangla: "বরফের টুকরা", english: "ice cube", exDe: "Ich möchte Eiswürfel im Glas.", exBn: "আমি গ্লাসে বরফের টুকরা চাই।" },
+      { id: 358, day: "Tag 18", serial: 18, artikel: "der", german: "Strohhalm", plural: "die Strohhalme", bangla: "স্ট্র", english: "straw", exDe: "Ich brauche einen Strohhalm.", exBn: "আমার একটি স্ট্র দরকার।" },
+      { id: 359, day: "Tag 18", serial: 19, artikel: "der", german: "Durst", plural: "(kein Plural)", bangla: "তৃষ্ণা", english: "thirst", exDe: "Ich habe Durst.", exBn: "আমার তৃষ্ণা পেয়েছে।" },
+      { id: 360, day: "Tag 18", serial: 20, artikel: "der", german: "Schluck", plural: "die Schlucke", bangla: "চুমুক", english: "sip, gulp", exDe: "Nimm einen Schluck Wasser!", exBn: "এক চুমুক পানি খাও!" },
+
+      // --- TAG 19: Shopping (কেনাকাটা) ---
+      { id: 361, day: "Tag 19", serial: 1, artikel: "das", german: "Geschäft", plural: "die Geschäfte", bangla: "দোকান", english: "shop, store", exDe: "Das Geschäft öffnet um neun Uhr.", exBn: "দোকান নয়টায় খোলে।" },
+      { id: 362, day: "Tag 19", serial: 2, artikel: "der", german: "Laden", plural: "die Läden", bangla: "দোকান", english: "shop", exDe: "Der Laden ist klein.", exBn: "দোকানটি ছোট।" },
+      { id: 363, day: "Tag 19", serial: 3, artikel: "der", german: "Supermarkt", plural: "die Supermärkte", bangla: "সুপারমার্কেট", english: "supermarket", exDe: "Ich gehe zum Supermarkt.", exBn: "আমি সুপারমার্কেটে যাই।" },
+      { id: 364, day: "Tag 19", serial: 4, artikel: "der", german: "Markt", plural: "die Märkte", bangla: "বাজার", english: "market", exDe: "Der Markt ist am Samstag.", exBn: "বাজার শনিবারে বসে।" },
+      { id: 365, day: "Tag 19", serial: 5, artikel: "der", german: "Einkauf", plural: "die Einkäufe", bangla: "কেনাকাটা; কেনা জিনিস", english: "shopping; purchase", exDe: "Der Einkauf ist schwer.", exBn: "কেনা জিনিসগুলো ভারী।" },
+      { id: 366, day: "Tag 19", serial: 6, artikel: "die", german: "Einkaufstasche", plural: "die Einkaufstaschen", bangla: "বাজারের ব্যাগ", english: "shopping bag", exDe: "Die Einkaufstasche ist voll.", exBn: "বাজারের ব্যাগটি ভর্তি।" },
+      { id: 367, day: "Tag 19", serial: 7, artikel: "der", german: "Einkaufswagen", plural: "die Einkaufswagen", bangla: "শপিং ট্রলি", english: "shopping cart", exDe: "Ich nehme einen Einkaufswagen.", exBn: "আমি একটি ট্রলি নিই।" },
+      { id: 368, day: "Tag 19", serial: 8, artikel: "der", german: "Preis", plural: "die Preise", bangla: "দাম", english: "price", exDe: "Der Preis ist niedrig.", exBn: "দাম কম।" },
+      { id: 369, day: "Tag 19", serial: 9, artikel: "das", german: "Angebot", plural: "die Angebote", bangla: "অফার, বিশেষ ছাড়", english: "offer, special deal", exDe: "Heute gibt es ein Angebot.", exBn: "আজ একটি অফার আছে।" },
+      { id: 370, day: "Tag 19", serial: 10, artikel: "der", german: "Rabatt", plural: "die Rabatte", bangla: "ছাড়", english: "discount", exDe: "Es gibt zehn Prozent Rabatt.", exBn: "দশ শতাংশ ছাড় আছে।" },
+      { id: 371, day: "Tag 19", serial: 11, artikel: "die", german: "Kasse", plural: "die Kassen", bangla: "ক্যাশ কাউন্টার", english: "checkout, cash register", exDe: "Die Kasse ist dort.", exBn: "ক্যাশ কাউন্টার ওখানে।" },
+      { id: 372, day: "Tag 19", serial: 12, artikel: "die", german: "Rechnung", plural: "die Rechnungen", bangla: "বিল, চালান", english: "bill, invoice", exDe: "Die Rechnung, bitte.", exBn: "বিলটা দিন, প্লিজ।" },
+      { id: 373, day: "Tag 19", serial: 13, artikel: "der", german: "Kassenbon", plural: "die Kassenbons", bangla: "রসিদ, ক্যাশ মেমো", english: "receipt", exDe: "Ich brauche den Kassenbon.", exBn: "আমার রসিদটা দরকার।" },
+      { id: 374, day: "Tag 19", serial: 14, artikel: "das", german: "Geld", plural: "(meist kein Plural)", bangla: "টাকা, অর্থ", english: "money", exDe: "Ich habe kein Geld dabei.", exBn: "আমার সাথে টাকা নেই।" },
+      { id: 375, day: "Tag 19", serial: 15, artikel: "der", german: "Euro", plural: "die Euro", bangla: "ইউরো", english: "euro", exDe: "Das kostet zehn Euro.", exBn: "এটির দাম দশ ইউরো।" },
+      { id: 376, day: "Tag 19", serial: 16, artikel: "das", german: "Bargeld", plural: "(kein Plural)", bangla: "নগদ টাকা", english: "cash", exDe: "Ich zahle mit Bargeld.", exBn: "আমি নগদ টাকায় দাম দিই।" },
+      { id: 377, day: "Tag 19", serial: 17, artikel: "die", german: "Kreditkarte", plural: "die Kreditkarten", bangla: "ক্রেডিট কার্ড", english: "credit card", exDe: "Kann ich mit Kreditkarte zahlen?", exBn: "আমি কি ক্রেডিট কার্ডে দাম দিতে পারি?" },
+      { id: 378, day: "Tag 19", serial: 18, artikel: "die", german: "Tüte", plural: "die Tüten", bangla: "প্যাকেট, ব্যাগ", english: "bag (plastic/paper)", exDe: "Brauchen Sie eine Tüte?", exBn: "আপনার কি একটি ব্যাগ লাগবে?" },
+      { id: 379, day: "Tag 19", serial: 19, artikel: "die", german: "Größe", plural: "die Größen", bangla: "সাইজ, মাপ", english: "size", exDe: "Welche Größe haben Sie?", exBn: "আপনার কোন সাইজ?" },
+      { id: 380, day: "Tag 19", serial: 20, artikel: "die", german: "Öffnungszeit", plural: "die Öffnungszeiten", bangla: "খোলার সময়", english: "opening hours", exDe: "Die Öffnungszeiten sind von 9 bis 18 Uhr.", exBn: "খোলার সময় সকাল ৯টা থেকে সন্ধ্যা ৬টা।" },
+
+      // --- TAG 20: Clothes (পোশাক) ---
+      { id: 381, day: "Tag 20", serial: 1, artikel: "die", german: "Kleidung", plural: "(kein Plural)", bangla: "পোশাক (সামগ্রিক)", english: "clothes, clothing", exDe: "Die Kleidung ist neu.", exBn: "পোশাকটি নতুন।" },
+      { id: 382, day: "Tag 20", serial: 2, artikel: "das", german: "Hemd", plural: "die Hemden", bangla: "শার্ট", english: "shirt", exDe: "Das Hemd ist weiß.", exBn: "শার্টটি সাদা।" },
+      { id: 383, day: "Tag 20", serial: 3, artikel: "das", german: "T-Shirt", plural: "die T-Shirts", bangla: "টি-শার্ট", english: "T-shirt", exDe: "Ich trage ein T-Shirt.", exBn: "আমি একটি টি-শার্ট পরে আছি।" },
+      { id: 384, day: "Tag 20", serial: 4, artikel: "die", german: "Hose", plural: "die Hosen", bangla: "প্যান্ট, ট্রাউজার", english: "trousers, pants", exDe: "Die Hose ist zu lang.", exBn: "প্যান্টটি খুব লম্বা।" },
+      { id: 385, day: "Tag 20", serial: 5, artikel: "die", german: "Jeans", plural: "die Jeans", bangla: "জিন্স", english: "jeans", exDe: "Meine Jeans ist blau.", exBn: "আমার জিন্সটি নীল।" },
+      { id: 386, day: "Tag 20", serial: 6, artikel: "der", german: "Pullover", plural: "die Pullover", bangla: "সোয়েটার", english: "sweater, pullover", exDe: "Der Pullover ist warm.", exBn: "সোয়েটারটি গরম।" },
+      { id: 387, day: "Tag 20", serial: 7, artikel: "die", german: "Jacke", plural: "die Jacken", bangla: "জ্যাকেট", english: "jacket", exDe: "Die Jacke ist schwarz.", exBn: "জ্যাকেটটি কালো।" },
+      { id: 388, day: "Tag 20", serial: 8, artikel: "der", german: "Mantel", plural: "die Mäntel", bangla: "কোট, ওভারকোট", english: "coat", exDe: "Im Winter trage ich einen Mantel.", exBn: "শীতে আমি কোট পরি।" },
+      { id: 389, day: "Tag 20", serial: 9, artikel: "das", german: "Kleid", plural: "die Kleider", bangla: "ড্রেস, ফ্রক", english: "dress", exDe: "Das Kleid ist schön.", exBn: "ড্রেসটি সুন্দর।" },
+      { id: 390, day: "Tag 20", serial: 10, artikel: "der", german: "Rock", plural: "die Röcke", bangla: "স্কার্ট", english: "skirt", exDe: "Der Rock ist kurz.", exBn: "স্কার্টটি ছোট।" },
+      { id: 391, day: "Tag 20", serial: 11, artikel: "der", german: "Anzug", plural: "die Anzüge", bangla: "স্যুট", english: "suit", exDe: "Mein Vater trägt einen Anzug.", exBn: "আমার বাবা স্যুট পরেন।" },
+      { id: 392, day: "Tag 20", serial: 12, artikel: "die", german: "Uniform", plural: "die Uniformen", bangla: "ইউনিফর্ম", english: "uniform", exDe: "Bei der Arbeit trage ich eine Uniform.", exBn: "কাজে আমি ইউনিফর্ম পরি।" },
+      { id: 393, day: "Tag 20", serial: 13, artikel: "der", german: "Schuh", plural: "die Schuhe", bangla: "জুতা", english: "shoe", exDe: "Der Schuh ist zu klein.", exBn: "জুতাটি খুব ছোট।" },
+      { id: 394, day: "Tag 20", serial: 14, artikel: "die", german: "Socke", plural: "die Socken", bangla: "মোজা", english: "sock", exDe: "Die Socken sind warm.", exBn: "মোজাগুলো গরম।" },
+      { id: 395, day: "Tag 20", serial: 15, artikel: "die", german: "Mütze", plural: "die Mützen", bangla: "টুপি (শীতের)", english: "cap, beanie", exDe: "Im Winter trage ich eine Mütze.", exBn: "শীতে আমি টুপি পরি।" },
+      { id: 396, day: "Tag 20", serial: 16, artikel: "der", german: "Hut", plural: "die Hüte", bangla: "হ্যাট, টুপি", english: "hat", exDe: "Der Hut ist braun.", exBn: "হ্যাটটি বাদামি।" },
+      { id: 397, day: "Tag 20", serial: 17, artikel: "der", german: "Schal", plural: "die Schals", bangla: "মাফলার, স্কার্ফ", english: "scarf", exDe: "Der Schal ist lang.", exBn: "মাফলারটি লম্বা।" },
+      { id: 398, day: "Tag 20", serial: 18, artikel: "der", german: "Handschuh", plural: "die Handschuhe", bangla: "দস্তানা, গ্লাভস", english: "glove", exDe: "Ich brauche warme Handschuhe.", exBn: "আমার গরম দস্তানা দরকার।" },
+      { id: 399, day: "Tag 20", serial: 19, artikel: "der", german: "Gürtel", plural: "die Gürtel", bangla: "বেল্ট", english: "belt", exDe: "Der Gürtel ist aus Leder.", exBn: "বেল্টটি চামড়ার।" },
+      { id: 400, day: "Tag 20", serial: 20, artikel: "die", german: "Krawatte", plural: "die Krawatten", bangla: "টাই", english: "tie, necktie", exDe: "Er trägt eine Krawatte.", exBn: "তিনি একটি টাই পরে আছেন।" },
+
+      // --- TAG 21: Body Parts (শরীরের অঙ্গ) ---
+      { id: 401, day: "Tag 21", serial: 1, artikel: "der", german: "Körper", plural: "die Körper", bangla: "শরীর, দেহ", english: "body", exDe: "Mein Körper ist müde.", exBn: "আমার শরীর ক্লান্ত।" },
+      { id: 402, day: "Tag 21", serial: 2, artikel: "der", german: "Kopf", plural: "die Köpfe", bangla: "মাথা", english: "head", exDe: "Mein Kopf tut weh.", exBn: "আমার মাথা ব্যথা করছে।" },
+      { id: 403, day: "Tag 21", serial: 3, artikel: "das", german: "Gesicht", plural: "die Gesichter", bangla: "মুখমণ্ডল, চেহারা", english: "face", exDe: "Sein Gesicht ist rund.", exBn: "তার চেহারা গোল।" },
+      { id: 404, day: "Tag 21", serial: 4, artikel: "das", german: "Haar", plural: "die Haare (meist im Plural)", bangla: "চুল", english: "hair", exDe: "Meine Haare sind schwarz.", exBn: "আমার চুল কালো।" },
+      { id: 405, day: "Tag 21", serial: 5, artikel: "das", german: "Auge", plural: "die Augen", bangla: "চোখ", english: "eye", exDe: "Ihre Augen sind braun.", exBn: "তার চোখ বাদামি।" },
+      { id: 406, day: "Tag 21", serial: 6, artikel: "das", german: "Ohr", plural: "die Ohren", bangla: "কান", english: "ear", exDe: "Ich höre mit den Ohren.", exBn: "আমি কান দিয়ে শুনি।" },
+      { id: 407, day: "Tag 21", serial: 7, artikel: "die", german: "Nase", plural: "die Nasen", bangla: "নাক", english: "nose", exDe: "Meine Nase ist kalt.", exBn: "আমার নাক ঠান্ডা।" },
+      { id: 408, day: "Tag 21", serial: 8, artikel: "der", german: "Mund", plural: "die Münder", bangla: "মুখ", english: "mouth", exDe: "Bitte öffnen Sie den Mund.", exBn: "দয়া করে মুখ খুলুন।" },
+      { id: 409, day: "Tag 21", serial: 9, artikel: "der", german: "Zahn", plural: "die Zähne", bangla: "দাঁত", english: "tooth", exDe: "Ich putze meine Zähne.", exBn: "আমি দাঁত ব্রাশ করি।" },
+      { id: 410, day: "Tag 21", serial: 10, artikel: "die", german: "Zunge", plural: "die Zungen", bangla: "জিভ", english: "tongue", exDe: "Meine Zunge brennt.", exBn: "আমার জিভ জ্বলছে।" },
+      { id: 411, day: "Tag 21", serial: 11, artikel: "der", german: "Hals", plural: "die Hälse", bangla: "গলা, ঘাড়", english: "throat, neck", exDe: "Mein Hals tut weh.", exBn: "আমার গলা ব্যথা করছে।" },
+      { id: 412, day: "Tag 21", serial: 12, artikel: "die", german: "Schulter", plural: "die Schultern", bangla: "কাঁধ", english: "shoulder", exDe: "Meine Schulter schmerzt.", exBn: "আমার কাঁধে ব্যথা।" },
+      { id: 413, day: "Tag 21", serial: 13, artikel: "der", german: "Arm", plural: "die Arme", bangla: "বাহু, হাত (কনুইসহ)", english: "arm", exDe: "Mein Arm ist gebrochen.", exBn: "আমার হাত ভেঙে গেছে।" },
+      { id: 414, day: "Tag 21", serial: 14, artikel: "die", german: "Hand", plural: "die Hände", bangla: "হাত (কবজি থেকে)", english: "hand", exDe: "Wasch dir die Hände!", exBn: "হাত ধুয়ে নাও!" },
+      { id: 415, day: "Tag 21", serial: 15, artikel: "der", german: "Finger", plural: "die Finger", bangla: "আঙুল", english: "finger", exDe: "Der Finger blutet.", exBn: "আঙুল থেকে রক্ত পড়ছে।" },
+      { id: 416, day: "Tag 21", serial: 16, artikel: "der", german: "Rücken", plural: "die Rücken", bangla: "পিঠ", english: "back", exDe: "Mein Rücken tut weh.", exBn: "আমার পিঠ ব্যথা করছে।" },
+      { id: 417, day: "Tag 21", serial: 17, artikel: "der", german: "Bauch", plural: "die Bäuche", bangla: "পেট", english: "belly, stomach", exDe: "Mein Bauch ist voll.", exBn: "আমার পেট ভরা।" },
+      { id: 418, day: "Tag 21", serial: 18, artikel: "das", german: "Bein", plural: "die Beine", bangla: "পা (উরুসহ)", english: "leg", exDe: "Sie hat lange Beine.", exBn: "তার পা লম্বা।" },
+      { id: 419, day: "Tag 21", serial: 19, artikel: "das", german: "Knie", plural: "die Knie", bangla: "হাঁটু", english: "knee", exDe: "Mein Knie schmerzt.", exBn: "আমার হাঁটুতে ব্যথা।" },
+      { id: 420, day: "Tag 21", serial: 20, artikel: "der", german: "Fuß", plural: "die Füße", bangla: "পায়ের পাতা", english: "foot", exDe: "Mein Fuß ist kalt.", exBn: "আমার পায়ের পাতা ঠান্ডা।" },
+
+      // --- TAG 22: Health (স্বাস্থ্য ও অসুস্থতা) ---
+      { id: 421, day: "Tag 22", serial: 1, artikel: "die", german: "Gesundheit", plural: "(kein Plural)", bangla: "স্বাস্থ্য", english: "health", exDe: "Gesundheit ist wichtig.", exBn: "স্বাস্থ্য গুরুত্বপূর্ণ।" },
+      { id: 422, day: "Tag 22", serial: 2, artikel: "die", german: "Krankheit", plural: "die Krankheiten", bangla: "অসুখ, রোগ", english: "illness, disease", exDe: "Die Krankheit ist ernst.", exBn: "রোগটি গুরুতর।" },
+      { id: 423, day: "Tag 22", serial: 3, artikel: "der", german: "Patient", plural: "die Patienten (f.: die Patientin)", bangla: "রোগী", english: "patient", exDe: "Der Patient wartet.", exBn: "রোগী অপেক্ষা করছেন।" },
+      { id: 424, day: "Tag 22", serial: 4, artikel: "das", german: "Fieber", plural: "(kein Plural)", bangla: "জ্বর", english: "fever", exDe: "Ich habe Fieber.", exBn: "আমার জ্বর আছে।" },
+      { id: 425, day: "Tag 22", serial: 5, artikel: "die", german: "Erkältung", plural: "die Erkältungen", bangla: "সর্দি-কাশি", english: "cold", exDe: "Ich habe eine Erkältung.", exBn: "আমার সর্দি-কাশি হয়েছে।" },
+      { id: 426, day: "Tag 22", serial: 6, artikel: "der", german: "Husten", plural: "(kein Plural)", bangla: "কাশি", english: "cough", exDe: "Mein Husten ist stark.", exBn: "আমার কাশি খুব বেশি।" },
+      { id: 427, day: "Tag 22", serial: 7, artikel: "der", german: "Schnupfen", plural: "(kein Plural)", bangla: "সর্দি", english: "runny nose", exDe: "Ich habe Schnupfen.", exBn: "আমার সর্দি হয়েছে।" },
+      { id: 428, day: "Tag 22", serial: 8, artikel: "die", german: "Kopfschmerzen", plural: "(nur Plural)", bangla: "মাথাব্যথা", english: "headache", exDe: "Ich habe Kopfschmerzen.", exBn: "আমার মাথাব্যথা করছে।" },
+      { id: 429, day: "Tag 22", serial: 9, artikel: "der", german: "Schmerz", plural: "die Schmerzen", bangla: "ব্যথা", english: "pain", exDe: "Der Schmerz ist stark.", exBn: "ব্যথা তীব্র।" },
+      { id: 430, day: "Tag 22", serial: 10, artikel: "das", german: "Medikament", plural: "die Medikamente", bangla: "ওষুধ", english: "medicine", exDe: "Das Medikament hilft gut.", exBn: "ওষুধটি ভালো কাজ করে।" },
+      { id: 431, day: "Tag 22", serial: 11, artikel: "die", german: "Tablette", plural: "die Tabletten", bangla: "ট্যাবলেট, বড়ি", english: "tablet, pill", exDe: "Ich nehme eine Tablette.", exBn: "আমি একটি ট্যাবলেট খাই।" },
+      { id: 432, day: "Tag 22", serial: 12, artikel: "das", german: "Rezept", plural: "die Rezepte (auch: Kochrezept)", bangla: "প্রেসক্রিপশন", english: "prescription", exDe: "Der Arzt gibt mir ein Rezept.", exBn: "ডাক্তার আমাকে প্রেসক্রিপশন দেন।" },
+      { id: 433, day: "Tag 22", serial: 13, artikel: "die", german: "Apotheke", plural: "die Apotheken", bangla: "ওষুধের দোকান, ফার্মেসি", english: "pharmacy", exDe: "Die Apotheke ist neben der Bank.", exBn: "ফার্মেসি ব্যাংকের পাশে।" },
+      { id: 434, day: "Tag 22", serial: 14, artikel: "die", german: "Praxis", plural: "die Praxen", bangla: "ডাক্তারের চেম্বার", english: "doctor's practice", exDe: "Die Praxis ist heute geschlossen.", exBn: "চেম্বার আজ বন্ধ।" },
+      { id: 435, day: "Tag 22", serial: 15, artikel: "der", german: "Notfall", plural: "die Notfälle", bangla: "জরুরি অবস্থা", english: "emergency", exDe: "Das ist ein Notfall!", exBn: "এটা জরুরি অবস্থা!" },
+      { id: 436, day: "Tag 22", serial: 16, artikel: "der", german: "Krankenwagen", plural: "die Krankenwagen", bangla: "অ্যাম্বুলেন্স", english: "ambulance", exDe: "Der Krankenwagen kommt sofort.", exBn: "অ্যাম্বুলেন্স এখনই আসছে।" },
+      { id: 437, day: "Tag 22", serial: 17, artikel: "die", german: "Allergie", plural: "die Allergien", bangla: "অ্যালার্জি", english: "allergy", exDe: "Ich habe eine Allergie.", exBn: "আমার অ্যালার্জি আছে।" },
+      { id: 438, day: "Tag 22", serial: 18, artikel: "die", german: "Impfung", plural: "die Impfungen", bangla: "টিকা", english: "vaccination", exDe: "Die Impfung ist wichtig.", exBn: "টিকা গুরুত্বপূর্ণ।" },
+      { id: 439, day: "Tag 22", serial: 19, artikel: "die", german: "Untersuchung", plural: "die Untersuchungen", bangla: "ডাক্তারি পরীক্ষা, চেকআপ", english: "examination, check-up", exDe: "Die Untersuchung dauert zehn Minuten.", exBn: "চেকআপ দশ মিনিট লাগে।" },
+      { id: 440, day: "Tag 22", serial: 20, artikel: "die", german: "Spritze", plural: "die Spritzen", bangla: "ইনজেকশন, সিরিঞ্জ", english: "injection, syringe", exDe: "Der Arzt gibt mir eine Spritze.", exBn: "ডাক্তার আমাকে একটি ইনজেকশন দেন।" },
+
+      // --- TAG 23: City & Places (শহর ও বিভিন্ন স্থান) ---
+      { id: 441, day: "Tag 23", serial: 1, artikel: "die", german: "Stadt", plural: "die Städte", bangla: "শহর", english: "city, town", exDe: "Die Stadt ist groß.", exBn: "শহরটি বড়।" },
+      { id: 442, day: "Tag 23", serial: 2, artikel: "das", german: "Dorf", plural: "die Dörfer", bangla: "গ্রাম", english: "village", exDe: "Meine Großeltern leben im Dorf.", exBn: "আমার দাদা-দাদি গ্রামে থাকেন।" },
+      { id: 443, day: "Tag 23", serial: 3, artikel: "die", german: "Hauptstadt", plural: "die Hauptstädte", bangla: "রাজধানী", english: "capital city", exDe: "Dhaka ist die Hauptstadt von Bangladesch.", exBn: "ঢাকা বাংলাদেশের রাজধানী।" },
+      { id: 444, day: "Tag 23", serial: 4, artikel: "das", german: "Zentrum", plural: "die Zentren", bangla: "কেন্দ্র, শহরের মধ্যভাগ", english: "centre", exDe: "Ich wohne im Zentrum.", exBn: "আমি শহরের কেন্দ্রে থাকি।" },
+      { id: 445, day: "Tag 23", serial: 5, artikel: "die", german: "Straße", plural: "die Straßen", bangla: "রাস্তা", english: "street, road", exDe: "Die Straße ist breit.", exBn: "রাস্তাটি চওড়া।" },
+      { id: 446, day: "Tag 23", serial: 6, artikel: "der", german: "Platz", plural: "die Plätze", bangla: "চত্বর; আসন; জায়গা", english: "square; seat; place", exDe: "Der Platz ist groß.", exBn: "চত্বরটি বড়।" },
+      { id: 447, day: "Tag 23", serial: 7, artikel: "die", german: "Ecke", plural: "die Ecken", bangla: "মোড়, কোণ", english: "corner", exDe: "Das Café ist an der Ecke.", exBn: "ক্যাফেটি মোড়ে।" },
+      { id: 448, day: "Tag 23", serial: 8, artikel: "die", german: "Kreuzung", plural: "die Kreuzungen", bangla: "চৌরাস্তা", english: "intersection", exDe: "Fahren Sie an der Kreuzung links.", exBn: "চৌরাস্তায় বাঁ দিকে যান।" },
+      { id: 449, day: "Tag 23", serial: 9, artikel: "die", german: "Brücke", plural: "die Brücken", bangla: "সেতু", english: "bridge", exDe: "Die Brücke ist lang.", exBn: "সেতুটি লম্বা।" },
+      { id: 450, day: "Tag 23", serial: 10, artikel: "der", german: "Park", plural: "die Parks", bangla: "পার্ক, উদ্যান", english: "park", exDe: "Wir gehen im Park spazieren.", exBn: "আমরা পার্কে হাঁটতে যাই।" },
+      { id: 451, day: "Tag 23", serial: 11, artikel: "der", german: "Spielplatz", plural: "die Spielplätze", bangla: "শিশুদের খেলার মাঠ", english: "playground", exDe: "Die Kinder sind auf dem Spielplatz.", exBn: "শিশুরা খেলার মাঠে আছে।" },
+      { id: 452, day: "Tag 23", serial: 12, artikel: "der", german: "Fluss", plural: "die Flüsse", bangla: "নদী", english: "river", exDe: "Der Fluss ist breit.", exBn: "নদীটি চওড়া।" },
+      { id: 453, day: "Tag 23", serial: 13, artikel: "das", german: "Café", plural: "die Cafés", bangla: "ক্যাফে", english: "café", exDe: "Wir treffen uns im Café.", exBn: "আমরা ক্যাফেতে দেখা করি।" },
+      { id: 454, day: "Tag 23", serial: 14, artikel: "die", german: "Moschee", plural: "die Moscheen", bangla: "মসজিদ", english: "mosque", exDe: "Die Moschee ist neu.", exBn: "মসজিদটি নতুন।" },
+      { id: 455, day: "Tag 23", serial: 15, artikel: "die", german: "Kirche", plural: "die Kirchen", bangla: "গির্জা", english: "church", exDe: "Die Kirche ist alt.", exBn: "গির্জাটি পুরোনো।" },
+      { id: 456, day: "Tag 23", serial: 16, artikel: "das", german: "Kino", plural: "die Kinos", bangla: "সিনেমা হল", english: "cinema", exDe: "Das Kino ist neben dem Café.", exBn: "সিনেমা হল ক্যাফের পাশে।" },
+      { id: 457, day: "Tag 23", serial: 17, artikel: "das", german: "Theater", plural: "die Theater", bangla: "থিয়েটার", english: "theatre", exDe: "Das Theater beginnt um 19 Uhr.", exBn: "থিয়েটার সন্ধ্যা ৭টায় শুরু হয়।" },
+      { id: 458, day: "Tag 23", serial: 18, artikel: "das", german: "Museum", plural: "die Museen", bangla: "জাদুঘর", english: "museum", exDe: "Das Museum ist interessant.", exBn: "জাদুঘরটি আকর্ষণীয়।" },
+      { id: 459, day: "Tag 23", serial: 19, artikel: "das", german: "Hochhaus", plural: "die Hochhäuser", bangla: "উঁচু ভবন, বহুতল ভবন", english: "high-rise building", exDe: "Das Hochhaus hat dreißig Etagen.", exBn: "উঁচু ভবনটিতে ত্রিশটি তলা আছে।" },
+      { id: 460, day: "Tag 23", serial: 20, artikel: "das", german: "Gebäude", plural: "die Gebäude", bangla: "ভবন, দালান", english: "building", exDe: "Das Gebäude ist alt.", exBn: "ভবনটি পুরোনো।" },
+
+      // --- TAG 24: Public Places (পাবলিক প্লেস ও প্রতিষ্ঠান) ---
+      { id: 461, day: "Tag 24", serial: 1, artikel: "das", german: "Krankenhaus", plural: "die Krankenhäuser", bangla: "হাসপাতাল", english: "hospital", exDe: "Das Krankenhaus ist neben dem Park.", exBn: "হাসপাতাল পার্কের পাশে।" },
+      { id: 462, day: "Tag 24", serial: 2, artikel: "die", german: "Bank", plural: "die Banken (Sitzbank: die Bänke)", bangla: "ব্যাংক", english: "bank", exDe: "Die Bank öffnet um neun Uhr.", exBn: "ব্যাংক নয়টায় খোলে।" },
+      { id: 463, day: "Tag 24", serial: 3, artikel: "die", german: "Post", plural: "(kein Plural) / auch: das Postamt", bangla: "পোস্ট অফিস, ডাক", english: "post office, mail", exDe: "Die Post ist in der Hauptstraße.", exBn: "পোস্ট অফিস মেইন রোডে।" },
+      { id: 464, day: "Tag 24", serial: 4, artikel: "die", german: "Polizei", plural: "(kein Plural)", bangla: "পুলিশ", english: "police", exDe: "Die Polizei hilft schnell.", exBn: "পুলিশ দ্রুত সাহায্য করে।" },
+      { id: 465, day: "Tag 24", serial: 5, artikel: "die", german: "Feuerwehr", plural: "(meist Singular)", bangla: "ফায়ার সার্ভিস", english: "fire brigade", exDe: "Die Feuerwehr kommt schnell.", exBn: "ফায়ার সার্ভিস দ্রুত আসে।" },
+      { id: 466, day: "Tag 24", serial: 6, artikel: "das", german: "Rathaus", plural: "die Rathäuser", bangla: "সিটি হল, পৌর ভবন", english: "town hall", exDe: "Das Rathaus ist im Zentrum.", exBn: "সিটি হল শহরের কেন্দ্রে।" },
+      { id: 467, day: "Tag 24", serial: 7, artikel: "das", german: "Amt", plural: "die Ämter", bangla: "সরকারি অফিস", english: "government office", exDe: "Ich muss zum Amt.", exBn: "আমাকে সরকারি অফিসে যেতে হবে।" },
+      { id: 468, day: "Tag 24", serial: 8, artikel: "die", german: "Botschaft", plural: "die Botschaften", bangla: "দূতাবাস", english: "embassy", exDe: "Die Botschaft ist in Berlin.", exBn: "দূতাবাস বার্লিনে।" },
+      { id: 469, day: "Tag 24", serial: 9, artikel: "der", german: "Kindergarten", plural: "die Kindergärten", bangla: "কিন্ডারগার্টেন", english: "kindergarten", exDe: "Mein Sohn geht in den Kindergarten.", exBn: "আমার ছেলে কিন্ডারগার্টেনে যায়।" },
+      { id: 470, day: "Tag 24", serial: 10, artikel: "das", german: "Gericht", plural: "die Gerichte (auch: Speise)", bangla: "আদালত", english: "court", exDe: "Das Gericht ist am Marktplatz.", exBn: "আদালত বাজার চত্বরে।" },
+      { id: 471, day: "Tag 24", serial: 11, artikel: "die", german: "Tankstelle", plural: "die Tankstellen", bangla: "পেট্রোল পাম্প", english: "petrol station", exDe: "Die Tankstelle ist an der Kreuzung.", exBn: "পেট্রোল পাম্প চৌরাস্তায়।" },
+      { id: 472, day: "Tag 24", serial: 12, artikel: "die", german: "Bäckerei", plural: "die Bäckereien", bangla: "বেকারি", english: "bakery", exDe: "Die Bäckerei öffnet früh.", exBn: "বেকারি সকালে খোলে।" },
+      { id: 473, day: "Tag 24", serial: 13, artikel: "das", german: "Schwimmbad", plural: "die Schwimmbäder", bangla: "সুইমিং পুল", english: "swimming pool", exDe: "Das Schwimmbad ist heute geöffnet.", exBn: "সুইমিং পুল আজ খোলা।" },
+      { id: 474, day: "Tag 24", serial: 14, artikel: "das", german: "Stadion", plural: "die Stadien", bangla: "স্টেডিয়াম", english: "stadium", exDe: "Das Stadion ist groß.", exBn: "স্টেডিয়ামটি বড়।" },
+      { id: 475, day: "Tag 24", serial: 15, artikel: "das", german: "Fitnessstudio", plural: "die Fitnessstudios", bangla: "জিম, ব্যায়ামাগার", english: "gym", exDe: "Ich gehe ins Fitnessstudio.", exBn: "আমি জিমে যাই।" },
+      { id: 476, day: "Tag 24", serial: 16, artikel: "die", german: "Touristeninformation", plural: "die Touristeninformationen", bangla: "পর্যটন তথ্যকেন্দ্র", english: "tourist information", exDe: "Die Touristeninformation hilft bei Fragen.", exBn: "পর্যটন তথ্যকেন্দ্র প্রশ্নে সাহায্য করে।" },
+      { id: 477, day: "Tag 24", serial: 17, artikel: "die", german: "Werkstatt", plural: "die Werkstätten", bangla: "ওয়ার্কশপ, মেরামতের দোকান", english: "workshop, garage", exDe: "Das Auto ist in der Werkstatt.", exBn: "গাড়িটি ওয়ার্কশপে আছে।" },
+      { id: 478, day: "Tag 24", serial: 18, artikel: "die", german: "Polizeiwache", plural: "die Polizeiwachen", bangla: "থানা", english: "police station", exDe: "Die Polizeiwache ist um die Ecke.", exBn: "থানা কাছেই, মোড়ের ওপাশে।" },
+      { id: 479, day: "Tag 24", serial: 19, artikel: "der", german: "Kiosk", plural: "die Kioske", bangla: "কিয়স্ক, ছোট দোকান", english: "kiosk", exDe: "Am Kiosk gibt es Zeitungen.", exBn: "কিয়স্কে পত্রিকা পাওয়া যায়।" },
+      { id: 480, day: "Tag 24", serial: 20, artikel: "der", german: "Geldautomat", plural: "die Geldautomaten", bangla: "এটিএম", english: "ATM, cash machine", exDe: "Der Geldautomat ist vor der Bank.", exBn: "এটিএম ব্যাংকের সামনে।" },
+
+      // --- TAG 25: Transportation (যানবাহন) ---
+      { id: 481, day: "Tag 25", serial: 1, artikel: "das", german: "Verkehrsmittel", plural: "die Verkehrsmittel", bangla: "যানবাহন", english: "means of transport", exDe: "Welches Verkehrsmittel nimmst du?", exBn: "তুমি কোন যানবাহন নাও?" },
+      { id: 482, day: "Tag 25", serial: 2, artikel: "das", german: "Auto", plural: "die Autos", bangla: "গাড়ি", english: "car", exDe: "Das Auto ist neu.", exBn: "গাড়িটি নতুন।" },
+      { id: 483, day: "Tag 25", serial: 3, artikel: "der", german: "Bus", plural: "die Busse", bangla: "বাস", english: "bus", exDe: "Der Bus kommt in fünf Minuten.", exBn: "বাস পাঁচ মিনিটে আসছে।" },
+      { id: 484, day: "Tag 25", serial: 4, artikel: "die", german: "Straßenbahn", plural: "die Straßenbahnen", bangla: "ট্রাম", english: "tram", exDe: "Die Straßenbahn fährt alle zehn Minuten.", exBn: "ট্রাম প্রতি দশ মিনিটে চলে।" },
+      { id: 485, day: "Tag 25", serial: 5, artikel: "die", german: "U-Bahn", plural: "die U-Bahnen", bangla: "মেট্রো, পাতালরেল", english: "underground, metro", exDe: "Ich fahre mit der U-Bahn.", exBn: "আমি মেট্রোতে যাই।" },
+      { id: 486, day: "Tag 25", serial: 6, artikel: "die", german: "S-Bahn", plural: "die S-Bahnen", bangla: "শহরতলির ট্রেন", english: "suburban train", exDe: "Die S-Bahn fährt zum Flughafen.", exBn: "এস-বান বিমানবন্দরে যায়।" },
+      { id: 487, day: "Tag 25", serial: 7, artikel: "der", german: "Zug", plural: "die Züge", bangla: "ট্রেন", english: "train", exDe: "Der Zug hat Verspätung.", exBn: "ট্রেন দেরিতে চলছে।" },
+      { id: 488, day: "Tag 25", serial: 8, artikel: "das", german: "Fahrrad", plural: "die Fahrräder", bangla: "সাইকেল", english: "bicycle", exDe: "Ich fahre mit dem Fahrrad zur Arbeit.", exBn: "আমি সাইকেলে কাজে যাই।" },
+      { id: 489, day: "Tag 25", serial: 9, artikel: "das", german: "Motorrad", plural: "die Motorräder", bangla: "মোটরসাইকেল", english: "motorcycle", exDe: "Das Motorrad ist laut.", exBn: "মোটরসাইকেলটি খুব শব্দ করে।" },
+      { id: 490, day: "Tag 25", serial: 10, artikel: "das", german: "Taxi", plural: "die Taxis", bangla: "ট্যাক্সি", english: "taxi", exDe: "Ich nehme ein Taxi.", exBn: "আমি একটি ট্যাক্সি নিই।" },
+      { id: 491, day: "Tag 25", serial: 11, artikel: "das", german: "Flugzeug", plural: "die Flugzeuge", bangla: "বিমান", english: "aeroplane", exDe: "Das Flugzeug startet um zehn Uhr.", exBn: "বিমান দশটায় ছাড়ে।" },
+      { id: 492, day: "Tag 25", serial: 12, artikel: "das", german: "Schiff", plural: "die Schiffe", bangla: "জাহাজ", english: "ship", exDe: "Das Schiff fährt nach Hamburg.", exBn: "জাহাজটি হামবুর্গে যাচ্ছে।" },
+      { id: 493, day: "Tag 25", serial: 13, artikel: "das", german: "Boot", plural: "die Boote", bangla: "নৌকা", english: "boat", exDe: "Das Boot ist klein.", exBn: "নৌকাটি ছোট।" },
+      { id: 494, day: "Tag 25", serial: 14, artikel: "der", german: "Hubschrauber", plural: "die Hubschrauber", bangla: "হেলিকপ্টার", english: "helicopter", exDe: "Der Hubschrauber landet.", exBn: "হেলিকপ্টার নামছে।" },
+      { id: 495, day: "Tag 25", serial: 15, artikel: "der", german: "Bahnhof", plural: "die Bahnhöfe", bangla: "রেলস্টেশন", english: "railway station", exDe: "Der Bahnhof ist im Zentrum.", exBn: "রেলস্টেশন শহরের কেন্দ্রে।" },
+      { id: 496, day: "Tag 25", serial: 16, artikel: "die", german: "Haltestelle", plural: "die Haltestellen", bangla: "স্টপ, থামার স্থান", english: "stop (bus/tram)", exDe: "Die Haltestelle ist hier.", exBn: "স্টপটি এখানে।" },
+      { id: 497, day: "Tag 25", serial: 17, artikel: "der", german: "Flughafen", plural: "die Flughäfen", bangla: "বিমানবন্দর", english: "airport", exDe: "Der Flughafen ist groß.", exBn: "বিমানবন্দরটি বড়।" },
+      { id: 498, day: "Tag 25", serial: 18, artikel: "die", german: "Fahrkarte", plural: "die Fahrkarten", bangla: "টিকিট", english: "ticket (transport)", exDe: "Ich kaufe eine Fahrkarte.", exBn: "আমি একটি টিকিট কিনি।" },
+      { id: 499, day: "Tag 25", serial: 19, artikel: "der", german: "Fahrplan", plural: "die Fahrpläne", bangla: "সময়সূচি", english: "timetable", exDe: "Der Fahrplan hängt an der Haltestelle.", exBn: "সময়সূচি স্টপে ঝোলানো আছে।" },
+      { id: 500, day: "Tag 25", serial: 20, artikel: "der", german: "Verkehr", plural: "(kein Plural)", bangla: "ট্রাফিক, যানবাহন চলাচল", english: "traffic", exDe: "Der Verkehr ist heute stark.", exBn: "আজ ট্রাফিক অনেক বেশি।" }
     ];
     // =========================================================================
     // VOCABULARY DATA END
