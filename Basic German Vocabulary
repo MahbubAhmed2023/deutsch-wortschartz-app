@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DE Deutsch Wortschatz — Glossar (Tag 01–05)</title>
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #1e40af;
+      --border: #e2e8f0;
+
+      /* Article Colors */
+      --der-main: #2563eb;
+      --der-bg: #eff6ff;
+      --der-border: #bfdbfe;
+
+      --die-main: #e11d48;
+      --die-bg: #fff1f2;
+      --die-border: #fecdd3;
+
+      --das-main: #059669;
+      --das-bg: #ecfdf5;
+      --das-border: #a7f3d0;
+
+      --none-main: #64748b;
+      --none-bg: #f8fafc;
+      --none-border: #cbd5e1;
+
+      --shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding-bottom: 50px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 26px 16px 34px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    header p {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+
+    .legend-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 0.8rem;
+    }
+
+    .legend-pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: -20px auto 0;
+      padding: 0 16px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-box .num {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-box .lbl {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .controls-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .mode-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .mode-btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .mode-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.93rem;
+      background: #fff;
+      color: var(--text);
+    }
+
+    /* Dictionary Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .word-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top-width: 5px;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.15s ease;
+    }
+
+    .word-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .theme-der { border-top-color: var(--der-main); }
+    .theme-die { border-top-color: var(--die-main); }
+    .theme-das { border-top-color: var(--das-main); }
+    .theme-none { border-top-color: var(--none-main); }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tag-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .art-pill {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: #fff;
+    }
+
+    .pill-der { background: var(--der-main); }
+    .pill-die { background: var(--die-main); }
+    .pill-das { background: var(--das-main); }
+    .pill-none { background: var(--none-main); }
+
+    .word-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .german-title {
+      font-size: 1.38rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .txt-der { color: var(--der-main); }
+    .txt-die { color: var(--die-main); }
+    .txt-das { color: var(--das-main); }
+    .txt-none { color: var(--text); }
+
+    .plural-line {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .plural-line strong {
+      color: var(--text);
+    }
+
+    .audio-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: var(--text);
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .audio-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .audio-btn.speaking {
+      background: #dbeafe;
+      border-color: var(--der-main);
+      color: var(--der-main);
+    }
+
+    .meaning-block {
+      border-top: 1px dashed var(--border);
+      border-bottom: 1px dashed var(--border);
+      padding: 10px 0;
+    }
+
+    .bn-text {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .en-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .example-card {
+      background: #f8fafc;
+      border-left: 3px solid #94a3b8;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.88rem;
+    }
+
+    .theme-der .example-card { background: var(--der-bg); border-left-color: var(--der-main); }
+    .theme-die .example-card { background: var(--die-bg); border-left-color: var(--die-main); }
+    .theme-das .example-card { background: var(--das-bg); border-left-color: var(--das-main); }
+
+    .ex-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .ex-de {
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .ex-bn {
+      color: #475569;
+      margin-top: 3px;
+    }
+
+    .card-footer {
+      display: flex;
+      gap: 8px;
+    }
+
+    .status-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .status-btn.fav-on {
+      background: #fef9c3;
+      border-color: #eab308;
+      color: #854d0e;
+    }
+
+    .status-btn.learn-on {
+      background: #dcfce7;
+      border-color: #16a34a;
+      color: #166534;
+    }
+
+    /* Flashcard */
+    .flash-container {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .flash-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-top-width: 6px;
+      border-radius: 20px;
+      padding: 32px 22px;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      margin-bottom: 14px;
+    }
+
+    .flash-word {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 10px 0 4px;
+    }
+
+    .flash-back {
+      width: 100%;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nav-btns {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Quiz */
+    .quiz-box {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .quiz-opts {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .quiz-opt {
+      text-align: left;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .quiz-opt.correct {
+      background: #dcfce7;
+      border-color: #16a34a;
+      font-weight: 700;
+    }
+
+    .quiz-opt.wrong {
+      background: #fee2e2;
+      border-color: #dc2626;
+    }
+
+    .empty-state {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 16px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🇩🇪 DE Deutsch Wortschatz</h1>
+    <p>Glossar & Vokabeltrainer • Tag 01 – Tag 05 (১০০টি শব্দ)</p>
+    <div class="legend-bar">
+      <span class="legend-pill pill-der">der = maskulin</span>
+      <span class="legend-pill pill-die">die = feminin</span>
+      <span class="legend-pill pill-das">das = neutral</span>
+      <span class="legend-pill pill-none">ohne Artikel</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="num" id="stTotal">0</div>
+        <div class="lbl">মোট শব্দ</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="stShown">0</div>
+        <div class="lbl">দেখানো হচ্ছে</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="stLearned">0</div>
+        <div class="lbl">Learned</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="stFav">0</div>
+        <div class="lbl">Favorite</div>
+      </div>
+    </div>
+
+    <div class="controls-panel">
+      <div class="mode-bar">
+        <button class="mode-btn active" data-mode="dictionary">📖 Glossar / Dictionary</button>
+        <button class="mode-btn" data-mode="flashcard">🃏 Flashcards</button>
+        <button class="mode-btn" data-mode="quiz">📝 Quiz</button>
+      </div>
+
+      <div class="filter-grid">
+        <input type="text" id="searchInput" placeholder="জার্মান, ইংরেজি বা বাংলায় খুঁজুন..." />
+        <select id="dayFilter">
+          <option value="ALL">সব দিন (Tag 01 – Tag 05)</option>
+          <option value="Tag 01">Tag 01 — মানুষ ও ব্যক্তিগত পরিচয়</option>
+          <option value="Tag 02">Tag 02 — পরিবার ও আত্মীয়স্বজন</option>
+          <option value="Tag 03">Tag 03 — বন্ধু ও সম্পর্ক</option>
+          <option value="Tag 04">Tag 04 — দেশ</option>
+          <option value="Tag 05">Tag 05 — ভাষা ও জাতীয়তা</option>
+        </select>
+        <select id="artikelFilter">
+          <option value="ALL">সব Artikel</option>
+          <option value="der">der (maskulin)</option>
+          <option value="die">die (feminin)</option>
+          <option value="das">das (neutral)</option>
+          <option value="">ohne Artikel</option>
+        </select>
+        <select id="statusFilter">
+          <option value="ALL">সব স্ট্যাটাস</option>
+          <option value="FAV">★ Favorite</option>
+          <option value="LEARNED">✓ Learned</option>
+          <option value="UNLEARNED">বাকি আছে</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="appContent"></div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // VOCABULARY DATA START (দিন ও সিরিয়াল অনুযায়ী সাজানো)
+    // =========================================================================
+    const vocabularyData = [
+      // --- TAG 01: People (মানুষ ও ব্যক্তিগত পরিচয়) ---
+      { id: 1, day: "Tag 01", serial: 1, artikel: "der", german: "Mann", plural: "die Männer", bangla: "পুরুষ, লোক", english: "man", exDe: "Der Mann trinkt Tee.", exBn: "লোকটি চা পান করে।" },
+      { id: 2, day: "Tag 01", serial: 2, artikel: "die", german: "Frau", plural: "die Frauen", bangla: "মহিলা, স্ত্রী", english: "woman, wife", exDe: "Die Frau arbeitet im Büro.", exBn: "মহিলাটি অফিসে কাজ করেন।" },
+      { id: 3, day: "Tag 01", serial: 3, artikel: "das", german: "Kind", plural: "die Kinder", bangla: "শিশু, সন্তান", english: "child", exDe: "Das Kind spielt im Garten.", exBn: "শিশুটি বাগানে খেলছে।" },
+      { id: 4, day: "Tag 01", serial: 4, artikel: "der", german: "Junge", plural: "die Jungen", bangla: "ছেলে", english: "boy", exDe: "Der Junge liest ein Buch.", exBn: "ছেলেটি একটি বই পড়ছে।" },
+      { id: 5, day: "Tag 01", serial: 5, artikel: "das", german: "Mädchen", plural: "die Mädchen", bangla: "মেয়ে", english: "girl", exDe: "Das Mädchen hört Musik.", exBn: "মেয়েটি গান শুনছে।" },
+      { id: 6, day: "Tag 01", serial: 6, artikel: "der", german: "Mensch", plural: "die Menschen", bangla: "মানুষ", english: "human being, person", exDe: "Jeder Mensch braucht Freunde.", exBn: "প্রত্যেক মানুষের বন্ধু দরকার।" },
+      { id: 7, day: "Tag 01", serial: 7, artikel: "die", german: "Person", plural: "die Personen", bangla: "ব্যক্তি, জন", english: "person", exDe: "Wie viele Personen kommen heute?", exBn: "আজ কতজন আসছেন?" },
+      { id: 8, day: "Tag 01", serial: 8, artikel: "der", german: "Name", plural: "die Namen", bangla: "নাম", english: "name", exDe: "Mein Name ist Rahim.", exBn: "আমার নাম রহিম।" },
+      { id: 9, day: "Tag 01", serial: 9, artikel: "der", german: "Vorname", plural: "die Vornamen", bangla: "প্রথম নাম", english: "first name", exDe: "Mein Vorname ist Karim.", exBn: "আমার প্রথম নাম করিম।" },
+      { id: 10, day: "Tag 01", serial: 10, artikel: "der", german: "Nachname", plural: "die Nachnamen", bangla: "পদবি, বংশনাম", english: "last name, surname", exDe: "Mein Nachname ist Hossain.", exBn: "আমার পদবি হোসেন।" },
+      { id: 11, day: "Tag 01", serial: 11, artikel: "das", german: "Alter", plural: "(kein Plural)", bangla: "বয়স", english: "age", exDe: "Mein Alter ist 30 Jahre.", exBn: "আমার বয়স ৩০ বছর।" },
+      { id: 12, day: "Tag 01", serial: 12, artikel: "das", german: "Geburtsdatum", plural: "die Geburtsdaten", bangla: "জন্মতারিখ", english: "date of birth", exDe: "Mein Geburtsdatum ist der 5. Mai 1995.", exBn: "আমার জন্মতারিখ ১৯৯৫ সালের ৫ মে।" },
+      { id: 13, day: "Tag 01", serial: 13, artikel: "der", german: "Geburtsort", plural: "die Geburtsorte", bangla: "জন্মস্থান", english: "place of birth", exDe: "Mein Geburtsort ist Dhaka.", exBn: "আমার জন্মস্থান ঢাকা।" },
+      { id: 14, day: "Tag 01", serial: 14, artikel: "die", german: "Adresse", plural: "die Adressen", bangla: "ঠিকানা", english: "address", exDe: "Meine Adresse ist Hauptstraße 5.", exBn: "আমার ঠিকানা হাউপ্টস্ট্রাসে ৫।" },
+      { id: 15, day: "Tag 01", serial: 15, artikel: "die", german: "Telefonnummer", plural: "die Telefonnummern", bangla: "ফোন নম্বর", english: "phone number", exDe: "Meine Telefonnummer ist 0176 1234567.", exBn: "আমার ফোন নম্বর ০১৭৬ ১২৩৪৫৬৭।" },
+      { id: 16, day: "Tag 01", serial: 16, artikel: "die", german: "E-Mail", plural: "die E-Mails", bangla: "ইমেইল", english: "e-mail", exDe: "Meine E-Mail ist anna@beispiel.de.", exBn: "আমার ইমেইল anna@beispiel.de।" },
+      { id: 17, day: "Tag 01", serial: 17, artikel: "der", german: "Herr", plural: "die Herren", bangla: "ভদ্রলোক, জনাব", english: "gentleman, Mr.", exDe: "Herr Müller ist mein Lehrer.", exBn: "জনাব মুলার আমার শিক্ষক।" },
+      { id: 18, day: "Tag 01", serial: 18, artikel: "der", german: "Erwachsene", plural: "die Erwachsenen", bangla: "প্রাপ্তবয়স্ক ব্যক্তি", english: "adult", exDe: "Der Erwachsene bezahlt zehn Euro.", exBn: "প্রাপ্তবয়স্ক ব্যক্তি দশ ইউরো দেন।" },
+      { id: 19, day: "Tag 01", serial: 19, artikel: "der", german: "Jugendliche", plural: "die Jugendlichen", bangla: "কিশোর, তরুণ", english: "teenager, young person", exDe: "Der Jugendliche geht zur Schule.", exBn: "কিশোরটি স্কুলে যায়।" },
+      { id: 20, day: "Tag 01", serial: 20, artikel: "der", german: "Ausweis", plural: "die Ausweise", bangla: "পরিচয়পত্র", english: "ID card", exDe: "Ich zeige meinen Ausweis.", exBn: "আমি আমার পরিচয়পত্র দেখাচ্ছি।" },
+
+      // --- TAG 02: Family (পরিবার ও আত্মীয়স্বজন) ---
+      { id: 21, day: "Tag 02", serial: 1, artikel: "die", german: "Familie", plural: "die Familien", bangla: "পরিবার", english: "family", exDe: "Meine Familie ist groß.", exBn: "আমার পরিবার বড়।" },
+      { id: 22, day: "Tag 02", serial: 2, artikel: "die", german: "Eltern", plural: "(nur Plural) / Singular: der Elternteil", bangla: "বাবা-মা, পিতামাতা", english: "parents", exDe: "Meine Eltern wohnen in Dhaka.", exBn: "আমার বাবা-মা ঢাকায় থাকেন।" },
+      { id: 23, day: "Tag 02", serial: 3, artikel: "der", german: "Vater", plural: "die Väter", bangla: "বাবা, পিতা", english: "father", exDe: "Mein Vater arbeitet bei der Bank.", exBn: "আমার বাবা ব্যাংকে কাজ করেন।" },
+      { id: 24, day: "Tag 02", serial: 4, artikel: "die", german: "Mutter", plural: "die Mütter", bangla: "মা, মাতা", english: "mother", exDe: "Meine Mutter kocht gern.", exBn: "আমার মা রান্না করতে ভালোবাসেন।" },
+      { id: 25, day: "Tag 02", serial: 5, artikel: "der", german: "Sohn", plural: "die Söhne", bangla: "ছেলে (সন্তান)", english: "son", exDe: "Ihr Sohn ist fünf Jahre alt.", exBn: "তাঁর ছেলের বয়স পাঁচ বছর।" },
+      { id: 26, day: "Tag 02", serial: 6, artikel: "die", german: "Tochter", plural: "die Töchter", bangla: "মেয়ে (সন্তান)", english: "daughter", exDe: "Meine Tochter geht in die Schule.", exBn: "আমার মেয়ে স্কুলে যায়।" },
+      { id: 27, day: "Tag 02", serial: 7, artikel: "der", german: "Bruder", plural: "die Brüder", bangla: "ভাই", english: "brother", exDe: "Mein Bruder studiert in Berlin.", exBn: "আমার ভাই বার্লিনে পড়াশোনা করে।" },
+      { id: 28, day: "Tag 02", serial: 8, artikel: "die", german: "Schwester", plural: "die Schwestern", bangla: "বোন", english: "sister", exDe: "Meine Schwester ist Ärztin.", exBn: "আমার বোন ডাক্তার।" },
+      { id: 29, day: "Tag 02", serial: 9, artikel: "die", german: "Geschwister", plural: "(nur Plural)", bangla: "ভাইবোন", english: "siblings", exDe: "Ich habe zwei Geschwister.", exBn: "আমার দুজন ভাইবোন আছে।" },
+      { id: 30, day: "Tag 02", serial: 10, artikel: "der", german: "Großvater", plural: "die Großväter (ugs.: der Opa)", bangla: "দাদা, নানা", english: "grandfather", exDe: "Mein Großvater ist achtzig Jahre alt.", exBn: "আমার দাদার বয়স আশি বছর।" },
+      { id: 31, day: "Tag 02", serial: 11, artikel: "die", german: "Großmutter", plural: "die Großmütter (ugs.: die Oma)", bangla: "দাদি, নানি", english: "grandmother", exDe: "Meine Großmutter backt Kuchen.", exBn: "আমার দাদি কেক বানান।" },
+      { id: 32, day: "Tag 02", serial: 12, artikel: "die", german: "Großeltern", plural: "(nur Plural)", bangla: "দাদা-দাদি, নানা-নানি", english: "grandparents", exDe: "Meine Großeltern leben auf dem Land.", exBn: "আমার দাদা-দাদি গ্রামে থাকেন।" },
+      { id: 33, day: "Tag 02", serial: 13, artikel: "der", german: "Onkel", plural: "die Onkel", bangla: "চাচা, মামা, খালু, ফুফা", english: "uncle", exDe: "Mein Onkel wohnt in Hamburg.", exBn: "আমার চাচা হামবুর্গে থাকেন।" },
+      { id: 34, day: "Tag 02", serial: 14, artikel: "die", german: "Tante", plural: "die Tanten", bangla: "চাচি, মামি, খালা, ফুফু", english: "aunt", exDe: "Meine Tante besucht uns am Sonntag.", exBn: "আমার খালা রবিবার আমাদের দেখতে আসেন।" },
+      { id: 35, day: "Tag 02", serial: 15, artikel: "der", german: "Cousin", plural: "die Cousins", bangla: "চাচাতো, মামাতো, খালাতো, ফুফাতো ভাই", english: "cousin (male)", exDe: "Mein Cousin spielt Fußball.", exBn: "আমার চাচাতো ভাই ফুটবল খেলে।" },
+      { id: 36, day: "Tag 02", serial: 16, artikel: "die", german: "Cousine", plural: "die Cousinen", bangla: "চাচাতো, মামাতো, খালাতো, ফুফাতো বোন", english: "cousin (female)", exDe: "Meine Cousine wohnt in Köln.", exBn: "আমার মামাতো বোন কলোনে থাকে।" },
+      { id: 37, day: "Tag 02", serial: 17, artikel: "der", german: "Ehemann", plural: "die Ehemänner (kurz: der Mann)", bangla: "স্বামী", english: "husband", exDe: "Ihr Ehemann arbeitet als Ingenieur.", exBn: "তাঁর স্বামী প্রকৌশলী হিসেবে কাজ করেন।" },
+      { id: 38, day: "Tag 02", serial: 18, artikel: "die", german: "Ehefrau", plural: "die Ehefrauen (kurz: die Frau)", bangla: "স্ত্রী", english: "wife", exDe: "Seine Ehefrau heißt Anna.", exBn: "তাঁর স্ত্রীর নাম আনা।" },
+      { id: 39, day: "Tag 02", serial: 19, artikel: "der", german: "Enkel", plural: "die Enkel (f.: die Enkelin / নাতনি)", bangla: "নাতি", english: "grandson", exDe: "Der Enkel besucht die Großmutter.", exBn: "নাতি দাদিকে দেখতে আসে।" },
+      { id: 40, day: "Tag 02", serial: 20, artikel: "der", german: "Verwandte", plural: "die Verwandten (f.: die Verwandte)", bangla: "আত্মীয়", english: "relative", exDe: "Meine Verwandten kommen zu Besuch.", exBn: "আমার আত্মীয়রা বেড়াতে আসছেন।" },
+
+      // --- TAG 03: Friends & Relationships (বন্ধু ও সম্পর্ক) ---
+      { id: 41, day: "Tag 03", serial: 1, artikel: "der", german: "Freund", plural: "die Freunde", bangla: "বন্ধু; প্রেমিক", english: "friend; boyfriend", exDe: "Mein Freund heißt Tom.", exBn: "আমার বন্ধুর নাম টম।" },
+      { id: 42, day: "Tag 03", serial: 2, artikel: "die", german: "Freundin", plural: "die Freundinnen", bangla: "বান্ধবী; প্রেমিকা", english: "female friend; girlfriend", exDe: "Meine Freundin wohnt in München.", exBn: "আমার বান্ধবী মিউনিখে থাকে।" },
+      { id: 43, day: "Tag 03", serial: 3, artikel: "der", german: "Kollege", plural: "die Kollegen", bangla: "সহকর্মী (পুরুষ)", english: "colleague (m.)", exDe: "Mein Kollege ist sehr nett.", exBn: "আমার সহকর্মী খুব ভালো মানুষ।" },
+      { id: 44, day: "Tag 03", serial: 4, artikel: "die", german: "Kollegin", plural: "die Kolleginnen", bangla: "সহকর্মী (নারী)", english: "colleague (f.)", exDe: "Meine Kollegin spricht gut Deutsch.", exBn: "আমার সহকর্মী ভালো জার্মান বলেন।" },
+      { id: 45, day: "Tag 03", serial: 5, artikel: "der", german: "Nachbar", plural: "die Nachbarn", bangla: "প্রতিবেশী (পুরুষ)", english: "neighbour (m.)", exDe: "Der Nachbar grüßt freundlich.", exBn: "প্রতিবেশী বন্ধুত্বপূর্ণভাবে অভিবাদন জানান।" },
+      { id: 46, day: "Tag 03", serial: 6, artikel: "die", german: "Nachbarin", plural: "die Nachbarinnen", bangla: "প্রতিবেশী (নারী)", english: "neighbour (f.)", exDe: "Die Nachbarin hilft mir oft.", exBn: "প্রতিবেশী মহিলা প্রায়ই আমাকে সাহায্য করেন।" },
+      { id: 47, day: "Tag 03", serial: 7, artikel: "der", german: "Partner", plural: "die Partner", bangla: "সঙ্গী, জীবনসঙ্গী (পুরুষ)", english: "partner (m.)", exDe: "Mein Partner kocht heute.", exBn: "আমার সঙ্গী আজ রান্না করছে।" },
+      { id: 48, day: "Tag 03", serial: 8, artikel: "die", german: "Partnerin", plural: "die Partnerinnen", bangla: "সঙ্গী, জীবনসঙ্গী (নারী)", english: "partner (f.)", exDe: "Seine Partnerin arbeitet im Krankenhaus.", exBn: "তাঁর সঙ্গী হাসপাতালে কাজ করেন।" },
+      { id: 49, day: "Tag 03", serial: 9, artikel: "die", german: "Beziehung", plural: "die Beziehungen", bangla: "সম্পর্ক", english: "relationship", exDe: "Wir haben eine gute Beziehung.", exBn: "আমাদের মধ্যে ভালো সম্পর্ক আছে।" },
+      { id: 50, day: "Tag 03", serial: 10, artikel: "die", german: "Hochzeit", plural: "die Hochzeiten", bangla: "বিয়ে, বিবাহ", english: "wedding", exDe: "Die Hochzeit ist im Juni.", exBn: "বিয়েটা জুন মাসে।" },
+      { id: 51, day: "Tag 03", serial: 11, artikel: "die", german: "Einladung", plural: "die Einladungen", bangla: "আমন্ত্রণ, দাওয়াত", english: "invitation", exDe: "Danke für die Einladung!", exBn: "আমন্ত্রণের জন্য ধন্যবাদ!" },
+      { id: 52, day: "Tag 03", serial: 12, artikel: "der", german: "Besuch", plural: "die Besuche", bangla: "দেখা করতে আসা; অতিথি", english: "visit; visitors", exDe: "Wir bekommen heute Besuch.", exBn: "আজ আমাদের বাসায় অতিথি আসছেন।" },
+      { id: 53, day: "Tag 03", serial: 13, artikel: "der", german: "Gast", plural: "die Gäste", bangla: "অতিথি, মেহমান", english: "guest", exDe: "Die Gäste kommen um acht Uhr.", exBn: "অতিথিরা আটটায় আসেন।" },
+      { id: 54, day: "Tag 03", serial: 14, artikel: "das", german: "Treffen", plural: "die Treffen", bangla: "সাক্ষাৎ, বৈঠক", english: "meeting, get-together", exDe: "Das Treffen ist um drei Uhr.", exBn: "সাক্ষাৎটা তিনটায়।" },
+      { id: 55, day: "Tag 03", serial: 15, artikel: "das", german: "Geschenk", plural: "die Geschenke", bangla: "উপহার", english: "gift, present", exDe: "Das ist ein Geschenk für dich.", exBn: "এটা তোমার জন্য একটি উপহার।" },
+      { id: 56, day: "Tag 03", serial: 16, artikel: "die", german: "Party", plural: "die Partys", bangla: "পার্টি, অনুষ্ঠান", english: "party", exDe: "Die Party beginnt um acht Uhr.", exBn: "পার্টি আটটায় শুরু হয়।" },
+      { id: 57, day: "Tag 03", serial: 17, artikel: "das", german: "Vertrauen", plural: "(kein Plural)", bangla: "বিশ্বাস, আস্থা", english: "trust", exDe: "Vertrauen ist wichtig.", exBn: "বিশ্বাস গুরুত্বপূর্ণ।" },
+      { id: 58, day: "Tag 03", serial: 18, artikel: "die", german: "Liebe", plural: "(kein Plural)", bangla: "ভালোবাসা", english: "love", exDe: "Die Liebe zur Familie ist wichtig.", exBn: "পরিবারের প্রতি ভালোবাসা গুরুত্বপূর্ণ।" },
+      { id: 59, day: "Tag 03", serial: 19, artikel: "das", german: "Glück", plural: "(kein Plural)", bangla: "সুখ; ভাগ্য", english: "happiness; luck", exDe: "Ich wünsche dir viel Glück!", exBn: "তোমার জন্য অনেক শুভকামনা রইল!" },
+      { id: 60, day: "Tag 03", serial: 20, artikel: "der", german: "Bekannte", plural: "die Bekannten (f.: die Bekannte)", bangla: "পরিচিত জন", english: "acquaintance", exDe: "Er ist ein Bekannter von mir.", exBn: "সে আমার একজন পরিচিত।" },
+
+      // --- TAG 04: Countries (দেশ) ---
+      { id: 61, day: "Tag 04", serial: 1, artikel: "das", german: "Land", plural: "die Länder", bangla: "দেশ; ভূমি", english: "country; land", exDe: "Bangladesch ist ein schönes Land.", exBn: "বাংলাদেশ একটি সুন্দর দেশ।" },
+      { id: 62, day: "Tag 04", serial: 2, artikel: "", german: "Bangladesch", plural: "(kein Plural)", bangla: "বাংলাদেশ", english: "Bangladesh", exDe: "Ich komme aus Bangladesch.", exBn: "আমি বাংলাদেশ থেকে এসেছি।" },
+      { id: 63, day: "Tag 04", serial: 3, artikel: "", german: "Deutschland", plural: "(kein Plural)", bangla: "জার্মানি", english: "Germany", exDe: "Berlin liegt in Deutschland.", exBn: "বার্লিন জার্মানিতে অবস্থিত।" },
+      { id: 64, day: "Tag 04", serial: 4, artikel: "", german: "Österreich", plural: "(kein Plural)", bangla: "অস্ট্রিয়া", english: "Austria", exDe: "Wien ist die Hauptstadt von Österreich.", exBn: "ভিয়েনা অস্ট্রিয়ার রাজধানী।" },
+      { id: 65, day: "Tag 04", serial: 5, artikel: "die", german: "Schweiz", plural: "(kein Plural)", bangla: "সুইজারল্যান্ড", english: "Switzerland", exDe: "Die Schweiz hat viele Berge.", exBn: "সুইজারল্যান্ডে অনেক পাহাড় আছে।" },
+      { id: 66, day: "Tag 04", serial: 6, artikel: "", german: "Frankreich", plural: "(kein Plural)", bangla: "ফ্রান্স", english: "France", exDe: "Paris liegt in Frankreich.", exBn: "প্যারিস ফ্রান্সে অবস্থিত।" },
+      { id: 67, day: "Tag 04", serial: 7, artikel: "", german: "Italien", plural: "(kein Plural)", bangla: "ইতালি", english: "Italy", exDe: "Ich mag das Essen in Italien.", exBn: "আমি ইতালির খাবার পছন্দ করি।" },
+      { id: 68, day: "Tag 04", serial: 8, artikel: "", german: "Spanien", plural: "(kein Plural)", bangla: "স্পেন", english: "Spain", exDe: "Im Sommer fahren wir nach Spanien.", exBn: "গ্রীষ্মে আমরা স্পেনে যাই।" },
+      { id: 69, day: "Tag 04", serial: 9, artikel: "", german: "Großbritannien", plural: "(kein Plural)", bangla: "যুক্তরাজ্য (গ্রেট ব্রিটেন)", english: "Great Britain", exDe: "London liegt in Großbritannien.", exBn: "লন্ডন যুক্তরাজ্যে অবস্থিত।" },
+      { id: 70, day: "Tag 04", serial: 10, artikel: "die", german: "Türkei", plural: "(kein Plural)", bangla: "তুরস্ক", english: "Turkey", exDe: "Die Türkei ist ein großes Land.", exBn: "তুরস্ক একটি বড় দেশ।" },
+      { id: 71, day: "Tag 04", serial: 11, artikel: "", german: "Indien", plural: "(kein Plural)", bangla: "ভারত", english: "India", exDe: "Indien liegt neben Bangladesch.", exBn: "ভারত বাংলাদেশের পাশে অবস্থিত।" },
+      { id: 72, day: "Tag 04", serial: 12, artikel: "", german: "Pakistan", plural: "(kein Plural)", bangla: "পাকিস্তান", english: "Pakistan", exDe: "Mein Freund kommt aus Pakistan.", exBn: "আমার বন্ধু পাকিস্তান থেকে এসেছে।" },
+      { id: 73, day: "Tag 04", serial: 13, artikel: "", german: "China", plural: "(kein Plural)", bangla: "চীন", english: "China", exDe: "China ist sehr groß.", exBn: "চীন অনেক বড়।" },
+      { id: 74, day: "Tag 04", serial: 14, artikel: "", german: "Japan", plural: "(kein Plural)", bangla: "জাপান", english: "Japan", exDe: "Japan ist weit weg.", exBn: "জাপান অনেক দূরে।" },
+      { id: 75, day: "Tag 04", serial: 15, artikel: "", german: "Saudi-Arabien", plural: "(kein Plural)", bangla: "সৌদি আরব", english: "Saudi Arabia", exDe: "Mein Onkel arbeitet in Saudi-Arabien.", exBn: "আমার চাচা সৌদি আরবে কাজ করেন।" },
+      { id: 76, day: "Tag 04", serial: 16, artikel: "die", german: "USA", plural: "(nur Plural)", bangla: "যুক্তরাষ্ট্র", english: "USA", exDe: "Er wohnt in den USA.", exBn: "সে যুক্তরাষ্ট্রে থাকে।" },
+      { id: 77, day: "Tag 04", serial: 17, artikel: "", german: "Kanada", plural: "(kein Plural)", bangla: "কানাডা", english: "Canada", exDe: "Kanada ist im Winter sehr kalt.", exBn: "কানাডা শীতকালে খুব ঠান্ডা।" },
+      { id: 78, day: "Tag 04", serial: 18, artikel: "", german: "Russland", plural: "(kein Plural)", bangla: "রাশিয়া", english: "Russia", exDe: "Das Wetter in Russland ist kalt.", exBn: "রাশিয়ার আবহাওয়া ঠান্ডা।" },
+      { id: 79, day: "Tag 04", serial: 19, artikel: "", german: "Australien", plural: "(kein Plural)", bangla: "অস্ট্রেলিয়া", english: "Australia", exDe: "In Australien leben Kängurus.", exBn: "অস্ট্রেলিয়ায় ক্যাঙ্গারু বাস করে।" },
+      { id: 80, day: "Tag 04", serial: 20, artikel: "", german: "Ägypten", plural: "(kein Plural)", bangla: "মিশর", english: "Egypt", exDe: "Ägypten hat berühmte Pyramiden.", exBn: "মিশরে বিখ্যাত পিরামিড আছে।" },
+
+      // --- TAG 05: Languages & Nationalities (ভাষা ও জাতীয়তা) ---
+      { id: 81, day: "Tag 05", serial: 1, artikel: "die", german: "Sprache", plural: "die Sprachen", bangla: "ভাষা", english: "language", exDe: "Welche Sprache sprichst du?", exBn: "তুমি কোন ভাষায় কথা বলো?" },
+      { id: 82, day: "Tag 05", serial: 2, artikel: "die", german: "Muttersprache", plural: "die Muttersprachen", bangla: "মাতৃভাষা", english: "mother tongue", exDe: "Meine Muttersprache ist Bengalisch.", exBn: "আমার মাতৃভাষা বাংলা।" },
+      { id: 83, day: "Tag 05", serial: 3, artikel: "die", german: "Fremdsprache", plural: "die Fremdsprachen", bangla: "বিদেশি ভাষা", english: "foreign language", exDe: "Ich lerne eine Fremdsprache.", exBn: "আমি একটি বিদেশি ভাষা শিখছি।" },
+      { id: 84, day: "Tag 05", serial: 4, artikel: "das", german: "Deutsch", plural: "(kein Plural) meist ohne Artikel", bangla: "জার্মান ভাষা", english: "German (language)", exDe: "Ich lerne Deutsch.", exBn: "আমি জার্মান শিখছি।" },
+      { id: 85, day: "Tag 05", serial: 5, artikel: "das", german: "Englisch", plural: "(kein Plural) meist ohne Artikel", bangla: "ইংরেজি ভাষা", english: "English (language)", exDe: "Er spricht gut Englisch.", exBn: "সে ভালো ইংরেজি বলে।" },
+      { id: 86, day: "Tag 05", serial: 6, artikel: "das", german: "Bengalisch", plural: "(kein Plural) meist ohne Artikel", bangla: "বাংলা ভাষা", english: "Bengali (language)", exDe: "Wir sprechen zu Hause Bengalisch.", exBn: "আমরা বাড়িতে বাংলা বলি।" },
+      { id: 87, day: "Tag 05", serial: 7, artikel: "das", german: "Französisch", plural: "(kein Plural) meist ohne Artikel", bangla: "ফরাসি ভাষা", english: "French (language)", exDe: "Sie lernt Französisch.", exBn: "সে ফরাসি শিখছে।" },
+      { id: 88, day: "Tag 05", serial: 8, artikel: "das", german: "Arabisch", plural: "(kein Plural) meist ohne Artikel", bangla: "আরবি ভাষা", english: "Arabic (language)", exDe: "Mein Freund spricht Arabisch.", exBn: "আমার বন্ধু আরবি বলে।" },
+      { id: 89, day: "Tag 05", serial: 9, artikel: "die", german: "Nationalität", plural: "die Nationalitäten", bangla: "জাতীয়তা", english: "nationality", exDe: "Was ist Ihre Nationalität?", exBn: "আপনার জাতীয়তা কী?" },
+      { id: 90, day: "Tag 05", serial: 10, artikel: "die", german: "Staatsangehörigkeit", plural: "die Staatsangehörigkeiten", bangla: "নাগরিকত্ব", english: "citizenship", exDe: "Meine Staatsangehörigkeit ist bangladeschisch.", exBn: "আমার নাগরিকত্ব বাংলাদেশি।" },
+      { id: 91, day: "Tag 05", serial: 11, artikel: "der", german: "Bangladescher", plural: "die Bangladescher (f.: die Bangladescherin)", bangla: "বাংলাদেশি (পুরুষ)", english: "Bangladeshi (m.)", exDe: "Ich bin Bangladescher.", exBn: "আমি একজন বাংলাদেশি।" },
+      { id: 92, day: "Tag 05", serial: 12, artikel: "der", german: "Deutsche", plural: "die Deutschen (ein Deutscher / eine Deutsche)", bangla: "জার্মান নাগরিক", english: "German (person)", exDe: "Der Deutsche wohnt in Berlin.", exBn: "জার্মান ভদ্রলোক বার্লিনে থাকেন।" },
+      { id: 93, day: "Tag 05", serial: 13, artikel: "der", german: "Inder", plural: "die Inder (f.: die Inderin)", bangla: "ভারতীয় (পুরুষ)", english: "Indian (m.)", exDe: "Der Inder kocht sehr gut.", exBn: "ভারতীয় ভদ্রলোক খুব ভালো রান্না করেন।" },
+      { id: 94, day: "Tag 05", serial: 14, artikel: "der", german: "Franzose", plural: "die Franzosen (f.: die Französin)", bangla: "ফরাসি (পুরুষ)", english: "Frenchman", exDe: "Der Franzose spricht schnell.", exBn: "ফরাসি ভদ্রলোক দ্রুত কথা বলেন।" },
+      { id: 95, day: "Tag 05", serial: 15, artikel: "der", german: "Türke", plural: "die Türken (f.: die Türkin)", bangla: "তুর্কি (পুরুষ)", english: "Turk (m.)", exDe: "Der Türke arbeitet in Köln.", exBn: "তুর্কি ভদ্রলোক কলোনে কাজ করেন।" },
+      { id: 96, day: "Tag 05", serial: 16, artikel: "der", german: "Amerikaner", plural: "die Amerikaner (f.: die Amerikanerin)", bangla: "আমেরিকান (পুরুষ)", english: "American (m.)", exDe: "Der Amerikaner kommt aus Texas.", exBn: "আমেরিকান ভদ্রলোক টেক্সাস থেকে এসেছেন।" },
+      { id: 97, day: "Tag 05", serial: 17, artikel: "der", german: "Chinese", plural: "die Chinesen (f.: die Chinesin)", bangla: "চীনা (পুরুষ)", english: "Chinese (m.)", exDe: "Der Chinese lernt Deutsch.", exBn: "চীনা ভদ্রলোক জার্মান শিখছেন।" },
+      { id: 98, day: "Tag 05", serial: 18, artikel: "der", german: "Pakistaner", plural: "die Pakistaner (f.: die Pakistanerin)", bangla: "পাকিস্তানি (পুরুষ)", english: "Pakistani (m.)", exDe: "Der Pakistaner ist mein Nachbar.", exBn: "পাকিস্তানি ভদ্রলোক আমার প্রতিবেশী।" },
+      { id: 99, day: "Tag 05", serial: 19, artikel: "der", german: "Brite", plural: "die Briten (f.: die Britin)", bangla: "ব্রিটিশ (পুরুষ)", english: "Briton (m.)", exDe: "Der Brite trinkt gern Tee.", exBn: "ব্রিটিশ ভদ্রলোক চা পান করতে ভালোবাসেন।" },
+      { id: 100, day: "Tag 05", serial: 20, artikel: "der", german: "Ausländer", plural: "die Ausländer (f.: die Ausländerin)", bangla: "বিদেশি (পুরুষ)", english: "foreigner", exDe: "Viele Ausländer leben in Deutschland.", exBn: "অনেক বিদেশি জার্মানিতে বাস করেন।" }
+    ];
+    // =========================================================================
+    // VOCABULARY DATA END
+    // =========================================================================
+
+    const STORAGE_KEY = "deutsch_glossar_progress_v1";
+    let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"fav":[],"learned":[]}');
+    let activeMode = "dictionary";
+    let flashIdx = 0;
+    let flashShowBack = false;
+    let quizData = null;
+    let quizLocked = false;
+    let quizChosen = null;
+
+    function persist() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    // German Text-to-Speech Audio Function
+    function speakGerman(text, btnEl) {
+      if (!("speechSynthesis" in window)) {
+        alert("দুঃখিত, আপনার ব্রাউজার অডিও উচ্চারণ সমর্থন করছে না।");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      document.querySelectorAll(".audio-btn.speaking").forEach(b => b.classList.remove("speaking"));
+
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "de-DE";
+      utter.rate = 0.92;
+
+      const voices = window.speechSynthesis.getVoices();
+      const deVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith("de"));
+      if (deVoice) utter.voice = deVoice;
+
+      if (btnEl) {
+        btnEl.classList.add("speaking");
+        utter.onend = () => btnEl.classList.remove("speaking");
+        utter.onerror = () => btnEl.classList.remove("speaking");
+      }
+      window.speechSynthesis.speak(utter);
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    function escapeAttr(str) {
+      return String(str).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+    }
+
+    function getTheme(art) {
+      if (art === "der") return { card: "theme-der", pill: "pill-der", txt: "txt-der", label: "der" };
+      if (art === "die") return { card: "theme-die", pill: "pill-die", txt: "txt-die", label: "die" };
+      if (art === "das") return { card: "theme-das", pill: "pill-das", txt: "txt-das", label: "das" };
+      return { card: "theme-none", pill: "pill-none", txt: "txt-none", label: "ohne Artikel" };
+    }
+
+    function getFilteredList() {
+      const q = document.getElementById("searchInput").value.trim().toLowerCase();
+      const day = document.getElementById("dayFilter").value;
+      const art = document.getElementById("artikelFilter").value;
+      const status = document.getElementById("statusFilter").value;
+
+      return vocabularyData
+        .filter(item => {
+          if (day !== "ALL" && item.day !== day) return false;
+          if (art !== "ALL" && item.artikel !== art) return false;
+          const isFav = state.fav.includes(item.id);
+          const isLearned = state.learned.includes(item.id);
+          if (status === "FAV" && !isFav) return false;
+          if (status === "LEARNED" && !isLearned) return false;
+          if (status === "UNLEARNED" && isLearned) return false;
+
+          if (q) {
+            const blob = `${item.artikel} ${item.german} ${item.plural} ${item.bangla} ${item.english} ${item.exDe} ${item.day}`.toLowerCase();
+            if (!blob.includes(q)) return false;
+          }
+          return true;
+        })
+        .sort((a, b) => a.day.localeCompare(b.day) || a.serial - b.serial);
+    }
+
+    function toggleFav(id) {
+      state.fav = state.fav.includes(id) ? state.fav.filter(x => x !== id) : [...state.fav, id];
+      persist();
+      render();
+    }
+
+    function toggleLearned(id) {
+      state.learned = state.learned.includes(id) ? state.learned.filter(x => x !== id) : [...state.learned, id];
+      persist();
+      render();
+    }
+
+    function renderDictionary(list) {
+      if (!list.length) {
+        return `<div class="empty-state">কোনো শব্দ পাওয়া যায়নি। সার্চ বা ফিল্টার পরিবর্তন করে দেখুন।</div>`;
+      }
+      return `
+        <div class="cards-grid">
+          ${list.map(w => {
+            const t = getTheme(w.artikel);
+            const isFav = state.fav.includes(w.id);
+            const isLearned = state.learned.includes(w.id);
+            const displayWord = w.artikel ? `${w.artikel} ${w.german}` : w.german;
+
+            return `
+              <div class="word-card ${t.card}">
+                <div>
+                  <div class="card-header">
+                    <span class="tag-pill">${w.day} • #${w.serial}</span>
+                    <span class="art-pill ${t.pill}">${t.label}</span>
+                  </div>
+
+                  <div class="word-row">
+                    <div>
+                      <div class="german-title ${t.txt}">${displayWord}</div>
+                      <div class="plural-line">Plural: <strong>${w.plural}</strong></div>
+                    </div>
+                    <button class="audio-btn" onclick="speakGerman('${escapeAttr(displayWord)}', this)" title="শব্দটি শুনুন">
+                      🔊 শব্দ
+                    </button>
+                  </div>
+                </div>
+
+                <div class="meaning-block">
+                  <div class="bn-text">${w.bangla}</div>
+                  <div class="en-text">${w.english}</div>
+                </div>
+
+                <div class="example-card">
+                  <div class="ex-top">
+                    <div class="ex-de">${w.exDe}</div>
+                    <button class="audio-btn" onclick="speakGerman('${escapeAttr(w.exDe)}', this)" title="উদাহরণ বাক্যটি শুনুন">
+                      🔊 বাক্য
+                    </button>
+                  </div>
+                  <div class="ex-bn">${w.exBn}</div>
+                </div>
+
+                <div class="card-footer">
+                  <button class="status-btn ${isFav ? "fav-on" : ""}" onclick="toggleFav(${w.id})">
+                    ${isFav ? "★ Favorite" : "☆ Favorite"}
+                  </button>
+                  <button class="status-btn ${isLearned ? "learn-on" : ""}" onclick="toggleLearned(${w.id})">
+                    ${isLearned ? "✓ Learned" : "Mark Learned"}
+                  </button>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function renderFlashcards(list) {
+      if (!list.length) {
+        return `<div class="empty-state">ফ্ল্যাশকার্ডের জন্য কোনো শব্দ নেই।</div>`;
+      }
+      if (flashIdx >= list.length) flashIdx = 0;
+      const w = list[flashIdx];
+      const t = getTheme(w.artikel);
+      const displayWord = w.artikel ? `${w.artikel} ${w.german}` : w.german;
+
+      return `
+        <div class="flash-container">
+          <div class="flash-card ${t.card}" onclick="flashShowBack = !flashShowBack; render();">
+            <div class="card-header" style="width:100%;">
+              <span class="tag-pill">${w.day} • #${w.serial}</span>
+              <span class="art-pill ${t.pill}">${t.label}</span>
+            </div>
+
+            <div class="flash-word ${t.txt}">${displayWord}</div>
+            <div class="plural-line">Plural: <strong>${w.plural}</strong></div>
+
+            <div style="margin-top:10px;" onclick="event.stopPropagation();">
+              <button class="audio-btn" onclick="speakGerman('${escapeAttr(displayWord)}', this)">🔊 উচ্চারণ শুনুন</button>
+            </div>
+
+            ${flashShowBack ? `
+              <div class="flash-back">
+                <div class="bn-text">${w.bangla}</div>
+                <div class="en-text">${w.english}</div>
+                <div class="example-card" style="margin-top:10px; text-align:left;" onclick="event.stopPropagation();">
+                  <div class="ex-top">
+                    <div class="ex-de">${w.exDe}</div>
+                    <button class="audio-btn" onclick="speakGerman('${escapeAttr(w.exDe)}', this)">🔊 বাক্য</button>
+                  </div>
+                  <div class="ex-bn">${w.exBn}</div>
+                </div>
+              </div>
+            ` : `<div class="en-text" style="margin-top:14px;">(অর্থ ও উদাহরণ দেখতে কার্ডে ক্লিক করুন)</div>`}
+          </div>
+
+          <div class="nav-btns">
+            <button class="mode-btn" onclick="flashIdx = (flashIdx - 1 + ${list.length}) % ${list.length}; flashShowBack = false; render();">← আগেরটি</button>
+            <button class="primary-btn" onclick="flashShowBack = !flashShowBack; render();">${flashShowBack ? "প্রশ্ন দেখুন" : "উত্তর দেখুন"}</button>
+            <button class="mode-btn" onclick="flashIdx = (flashIdx + 1) % ${list.length}; flashShowBack = false; render();">পরেরটি →</button>
+          </div>
+          <div class="plural-line" style="margin-top:10px;">কার্ড ${flashIdx + 1} / ${list.length}</div>
+        </div>
+      `;
+    }
+
+    function createQuiz(list) {
+      if (list.length < 4) return;
+      quizLocked = false;
+      quizChosen = null;
+      const target = list[Math.floor(Math.random() * list.length)];
+      const others = list.filter(x => x.id !== target.id).sort(() => Math.random() - 0.5).slice(0, 3);
+      const options = [...others, target].sort(() => Math.random() - 0.5);
+      quizData = { target, options };
+    }
+
+    function answerQuiz(id) {
+      if (quizLocked) return;
+      quizLocked = true;
+      quizChosen = id;
+      render();
+    }
+
+    function renderQuiz(list) {
+      if (list.length < 4) {
+        return `<div class="empty-state">কুইজ খেলার জন্য কমপক্ষে ৪টি শব্দ থাকতে হবে।</div>`;
+      }
+      if (!quizData || !list.some(x => x.id === quizData.target.id)) {
+        createQuiz(list);
+      }
+      const { target, options } = quizData;
+      const t = getTheme(target.artikel);
+      const displayWord = target.artikel ? `${target.artikel} ${target.german}` : target.german;
+
+      return `
+        <div class="quiz-box">
+          <div class="card-header">
+            <span class="tag-pill">${target.day} • #${target.serial}</span>
+            <span class="art-pill ${t.pill}">${t.label}</span>
+          </div>
+
+          <div class="word-row" style="margin-top:12px;">
+            <div class="german-title ${t.txt}">"${displayWord}" এর অর্থ কী?</div>
+            <button class="audio-btn" onclick="speakGerman('${escapeAttr(displayWord)}', this)">🔊 শুনুন</button>
+          </div>
+
+          <div class="quiz-opts">
+            ${options.map(opt => {
+              let cls = "quiz-opt";
+              if (quizLocked) {
+                if (opt.id === target.id) cls += " correct";
+                else if (quizChosen === opt.id) cls += " wrong";
+              }
+              return `
+                <button class="${cls}" onclick="answerQuiz(${opt.id})">
+                  ${opt.bangla} <span style="color:#64748b;">(${opt.english})</span>
+                </button>
+              `;
+            }).join("")}
+          </div>
+
+          ${quizLocked ? `
+            <div style="margin-top:14px; text-align:right;">
+              <button class="primary-btn" onclick="createQuiz(getFilteredList()); render();">পরবর্তী প্রশ্ন →</button>
+            </div>
+          ` : ""}
+        </div>
+      `;
+    }
+
+    function render() {
+      const list = getFilteredList();
+      document.getElementById("stTotal").textContent = vocabularyData.length;
+      document.getElementById("stShown").textContent = list.length;
+      document.getElementById("stLearned").textContent = state.learned.length;
+      document.getElementById("stFav").textContent = state.fav.length;
+
+      const container = document.getElementById("appContent");
+      if (activeMode === "dictionary") container.innerHTML = renderDictionary(list);
+      else if (activeMode === "flashcard") container.innerHTML = renderFlashcards(list);
+      else if (activeMode === "quiz") container.innerHTML = renderQuiz(list);
+    }
+
+    document.querySelectorAll(".mode-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeMode = btn.dataset.mode;
+        flashShowBack = false;
+        createQuiz(getFilteredList());
+        render();
+      });
+    });
+
+    ["searchInput", "dayFilter", "artikelFilter", "statusFilter"].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener("input", () => {
+        flashIdx = 0;
+        flashShowBack = false;
+        createQuiz(getFilteredList());
+        render();
+      });
+      el.addEventListener("change", () => {
+        flashIdx = 0;
+        flashShowBack = false;
+        createQuiz(getFilteredList());
+        render();
+      });
+    });
+
+    createQuiz(vocabularyData);
+    render();
+  </script>
+</body>
+</html>
